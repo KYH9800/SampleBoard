@@ -11,6 +11,7 @@
   "author": "KoYunHyeok",
   "license": "ISC",
   "dependencies": {
+    "babel-plugin-styled-components": "^2.0.7",
     "next": "^13.1.6",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
