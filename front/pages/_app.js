@@ -4,18 +4,18 @@ import Head from 'next/head';
 // global.css
 import '../styles/global.css';
 
-const WaffleBoard = ({ Component, pageProps }) => (
+const SampleBoard = ({ Component, pageProps }) => (
   <>
     <Head>
       <meta charSet="utf-8" />
-      <title>와플보드 샘플</title>
+      <title>게시판 샘플</title>
     </Head>
     <Component {...pageProps} />
   </>
 );
 
-WaffleBoard.propTypes = {
+SampleBoard.propTypes = {
   Component: PropTypes.func.isRequired,
 };
 
-export default WaffleBoard;
+export default SampleBoard;
