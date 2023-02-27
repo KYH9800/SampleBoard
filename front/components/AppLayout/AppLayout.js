@@ -6,7 +6,7 @@ import MainNavbar from '../Navbar/MainNavbar';
 import Navbar from '../Navbar/Navbar';
 import LoginBox from '../LoginBox/LoginBox';
 import ChatBox from '../ChatBox/ChatBox';
-import BannerSideTop from '../Banner/bannerSideTop';
+import BannerSideTop from '../Banner/BannerSideTop';
 import Footer from './Footer';
 // styled-components
 import {

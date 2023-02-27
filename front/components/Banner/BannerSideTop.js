@@ -1,6 +1,6 @@
 import React from 'react';
 // styled-components
-import { BannerTopImg } from '../../styles/components/Banners/BannerSideTopSt';
+import { BannerTopWrapper, BannerTopImg } from '../../styles/components/Banners/BannerSideTopSt';
 
 // side top
 const BannerSideTop = () => {
