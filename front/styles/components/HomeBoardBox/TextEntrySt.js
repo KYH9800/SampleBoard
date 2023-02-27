@@ -13,7 +13,7 @@ export const TextArticle = styled.article`
   gap: 10px;
 `;
 
-export const Svg = styled.svg`
+export const ImgSvgLogo = styled.img`
   width: 14px;
   height: 14px;
 `;

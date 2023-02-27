@@ -1,6 +1,11 @@
 import React from 'react';
 // styled-components
-import styled from 'styled-components';
+import {
+  UserMessageLine,
+  UserNickname,
+  ChatNoticeLogoImg,
+  MyMessage,
+} from '../../styles/components/ChatBox/ChatListEntrySt';
 
 const ChatListEntry = ({ data }) => {
   return (
@@ -13,11 +18,11 @@ const ChatListEntry = ({ data }) => {
             {data.user}
           </UserNickname>
           <span>
-            {data.message.split('\n').map((text) => (
-              <>
+            {data.message.split('\n').map((text, idx) => (
+              <div key={idx}>
                 {text}
                 <br />
-              </>
+              </div>
             ))}
           </span>
         </UserMessageLine>
@@ -39,25 +44,3 @@ const ChatListEntry = ({ data }) => {
 };
 
 export default ChatListEntry;
-
-const UserMessageLine = styled.li`
-  position: relative;
-  display: flex;
-`;
-
-const UserNickname = styled.span`
-  cursor: pointer;
-  font-weight: bold;
-  margin-right: 10px;
-`;
-
-const ChatNoticeLogoImg = styled.img`
-  width: 14px;
-  height: 14px;
-`;
-
-const MyMessage = styled.li`
-  position: relative;
-  display: flex;
-  justify-content: end;
-`;

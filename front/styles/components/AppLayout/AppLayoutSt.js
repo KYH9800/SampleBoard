@@ -36,11 +36,25 @@ export const Main = styled.main`
 `;
 
 export const Aside = styled.aside`
+  order: 1;
+
   width: 360px;
 
   display: flex;
   flex-direction: column;
   gap: 20px;
+`;
+
+export const Pages = styled.div`
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  order: 2;
+
+  width: 100%;
 `;
 
 export const LoginSection = styled.aside`
@@ -61,5 +75,21 @@ export const CustomLink = styled(Link)`
 
   :hover {
     color: black;
+  }
+`;
+
+// 페이지 버튼
+export const ButtonList = styled.div`
+  position: fixed;
+  right: 1%;
+  bottom: 2%;
+
+  display: flex;
+  flex-direction: column;
+
+  img {
+    cursor: pointer;
+    width: 58px;
+    height: 58px;
   }
 `;

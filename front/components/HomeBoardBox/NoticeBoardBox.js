@@ -6,12 +6,11 @@ import { HomeItemBox, BoxHeader, TextBox } from '../../styles/pages/HomeSt';
 // components
 import TextEntry from './TextEntry';
 
+// mockData
+import { notice_fake_data } from '../../MockDatas/MockData';
+
 // 공지사항
 const NoticeBoardBox = () => {
-  const fake_data = {
-    content: '공지사항 글을 보여줍니다.',
-  };
-
   return (
     <HomeItemBox>
       <BoxHeader>
@@ -24,14 +23,14 @@ const NoticeBoardBox = () => {
       </BoxHeader>
 
       <TextBox>
-        <TextEntry data={fake_data} />
-        <TextEntry data={fake_data} />
-        <TextEntry data={fake_data} />
-        <TextEntry data={fake_data} />
-        <TextEntry data={fake_data} />
-        <TextEntry data={fake_data} />
-        <TextEntry data={fake_data} />
-        <TextEntry data={fake_data} />
+        <TextEntry data={notice_fake_data} />
+        <TextEntry data={notice_fake_data} />
+        <TextEntry data={notice_fake_data} />
+        <TextEntry data={notice_fake_data} />
+        <TextEntry data={notice_fake_data} />
+        <TextEntry data={notice_fake_data} />
+        <TextEntry data={notice_fake_data} />
+        <TextEntry data={notice_fake_data} />
       </TextBox>
     </HomeItemBox>
   );

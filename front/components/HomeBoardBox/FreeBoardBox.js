@@ -5,12 +5,11 @@ import { HomeItemBox, BoxHeader, TextBox } from '../../styles/pages/HomeSt';
 // components
 import TextEntry from './TextEntry';
 
+// mockData
+import { free_fake_data } from '../../MockDatas/MockData';
+
 // 자유게시판
 const FreeBoardBox = () => {
-  const fake_data = {
-    content: '자유게시판 글을 보여줍니다.',
-  };
-
   return (
     <HomeItemBox>
       <BoxHeader>
@@ -23,14 +22,14 @@ const FreeBoardBox = () => {
       </BoxHeader>
 
       <TextBox>
-        <TextEntry data={fake_data} />
-        <TextEntry data={fake_data} />
-        <TextEntry data={fake_data} />
-        <TextEntry data={fake_data} />
-        <TextEntry data={fake_data} />
-        <TextEntry data={fake_data} />
-        <TextEntry data={fake_data} />
-        <TextEntry data={fake_data} />
+        <TextEntry data={free_fake_data} />
+        <TextEntry data={free_fake_data} />
+        <TextEntry data={free_fake_data} />
+        <TextEntry data={free_fake_data} />
+        <TextEntry data={free_fake_data} />
+        <TextEntry data={free_fake_data} />
+        <TextEntry data={free_fake_data} />
+        <TextEntry data={free_fake_data} />
       </TextBox>
     </HomeItemBox>
   );

@@ -15,17 +15,23 @@ import {
   NavbarFooter,
   Main,
   Aside,
+  Pages,
   LoginSection,
   Section,
   CustomLink,
+  ButtonList,
 } from '../../styles/components/AppLayout/AppLayoutSt';
+import styled from 'styled-components';
+import Link from 'next/link';
 
 /********************************
  * 세로 1280px 이하부터 탭/모바일 반응형
  ********************************/
 
 const AppLayout = ({ children }) => {
-  // TODO...
+  const onClickAlert = () => {
+    alert('해당 기능을 준비중입니다.');
+  };
 
   return (
     <LayoutWrapper>
@@ -49,7 +55,17 @@ const AppLayout = ({ children }) => {
           <ChatBox />
           <BannerSideTop />
         </Aside>
-        <div>{children}</div>
+
+        <Pages>
+          {children}
+          <ButtonList>
+            <img src="/images/naver_quick.png" onClick={onClickAlert} />
+            <img src="/images/kakao_quick.png" onClick={onClickAlert} />
+            <Link href="#">
+              <img src="/images/top_btn.png" />
+            </Link>
+          </ButtonList>
+        </Pages>
       </Main>
 
       <Footer />
