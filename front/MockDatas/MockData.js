@@ -114,3 +114,123 @@ export const free_board_fake_data = [
     src: '/images/1672023331502-3o43kwpfrii.jpg',
   },
 ];
+
+//* 갤러리 카드 페이크 데이터
+export const gallery_card_fake_data = [
+  {
+    src: '/images/1672023331502-3o43kwpfrii.jpg',
+    title: '재택근무 데스크 셋업',
+    user_name: '강지영',
+    permission_name: '아나운서',
+    datetime: '02-28',
+  },
+  {
+    src: '/images/1672023331502-3o43kwpfrii.jpg',
+    title: '재택근무 데스크 셋업',
+    user_name: '강지영',
+    permission_name: '아나운서',
+    datetime: '02-28',
+  },
+  {
+    src: '/images/1672023331502-3o43kwpfrii.jpg',
+    title: '재택근무 데스크 셋업',
+    user_name: '강지영',
+    permission_name: '아나운서',
+    datetime: '02-28',
+  },
+  {
+    src: '/images/1672023331502-3o43kwpfrii.jpg',
+    title: '재택근무 데스크 셋업',
+    user_name: '강지영',
+    permission_name: '아나운서',
+    datetime: '02-28',
+  },
+  {
+    src: '/images/1672023331502-3o43kwpfrii.jpg',
+    title: '재택근무 데스크 셋업',
+    user_name: '강지영',
+    permission_name: '아나운서',
+    datetime: '02-28',
+  },
+  {
+    src: '/images/1672023331502-3o43kwpfrii.jpg',
+    title: '재택근무 데스크 셋업',
+    user_name: '강지영',
+    permission_name: '아나운서',
+    datetime: '02-28',
+  },
+  {
+    src: '/images/1672023331502-3o43kwpfrii.jpg',
+    title: '재택근무 데스크 셋업',
+    user_name: '강지영',
+    permission_name: '아나운서',
+    datetime: '02-28',
+  },
+];
+
+//* 유튜브 카드 페이크 데이터
+export const youtube_card_fake_data = [
+  {
+    src: '/images/hqdefault.jpg',
+    title: '재택근무 데스크 셋업',
+    user_name: '태연',
+    permission_name: '가수',
+    datetime: '02-28',
+  },
+  {
+    src: '/images/hqdefault.jpg',
+    title: '재택근무 데스크 셋업',
+    user_name: '태연',
+    permission_name: '가수',
+    datetime: '02-28',
+  },
+  {
+    src: '/images/hqdefault.jpg',
+    title: '재택근무 데스크 셋업',
+    user_name: '태연',
+    permission_name: '가수',
+    datetime: '02-28',
+  },
+  {
+    src: '/images/hqdefault.jpg',
+    title: '재택근무 데스크 셋업',
+    user_name: '태연',
+    permission_name: '가수',
+    datetime: '02-28',
+  },
+  {
+    src: '/images/hqdefault.jpg',
+    title: '재택근무 데스크 셋업',
+    user_name: '태연',
+    permission_name: '가수',
+    datetime: '02-28',
+  },
+  {
+    src: '/images/hqdefault.jpg',
+    title: '재택근무 데스크 셋업',
+    user_name: '태연',
+    permission_name: '가수',
+    datetime: '02-28',
+  },
+  {
+    src: '/images/hqdefault.jpg',
+    title: '재택근무 데스크 셋업',
+    user_name: '태연',
+    permission_name: '가수',
+    datetime: '02-28',
+  },
+  {
+    src: '/images/hqdefault.jpg',
+    title: '재택근무 데스크 셋업',
+    user_name: '태연',
+    permission_name: '가수',
+    datetime: '02-28',
+  },
+  {
+    src: '/images/hqdefault.jpg',
+    title: '재택근무 데스크 셋업',
+    user_name: '태연',
+    permission_name: '가수',
+    datetime: '02-28',
+  },
+];

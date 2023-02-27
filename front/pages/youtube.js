@@ -3,18 +3,13 @@ import Head from 'next/head';
 // AppLayout
 import AppLayout from '../components/AppLayout/AppLayout';
 // styled-components
-import {
-  TitleContainer,
-  Title,
-  BoarderList,
-  SearchForm,
-  Section,
-  SearchInput,
-  SearchButton,
-} from '../styles/pages/FreeSt';
+import { TitleContainer, Title, SearchForm, Section, SearchInput, SearchButton } from '../styles/pages/FreeSt';
+import { PostCardList } from '../styles/pages/PostCardEntry';
+// components
+import PostCardEntry from '../components/Pages/PostCardEntry';
 
 // mockData
-import { free_board_fake_data } from '../MockDatas/MockData';
+import { youtube_card_fake_data } from '../MockDatas/MockData';
 
 // 자유게시판
 const Youtube = () => {
@@ -51,6 +46,12 @@ const Youtube = () => {
       <TitleContainer id="titleContainer">
         <Title>유튜브</Title>
       </TitleContainer>
+
+      <PostCardList id="post-card-list">
+        {youtube_card_fake_data.map((data) => (
+          <PostCardEntry data={data} />
+        ))}
+      </PostCardList>
     </AppLayout>
   );
 };
