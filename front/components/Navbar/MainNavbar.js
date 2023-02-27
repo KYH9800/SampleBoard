@@ -16,6 +16,9 @@ const MainNavbar = () => {
   const onSubmitEvent = (e) => {
     e.preventDefault();
     console.log('검색 이벤트');
+
+    let test = '고윤혁';
+    window.location = `/search?keyword=${test}`;
   };
 
   return (

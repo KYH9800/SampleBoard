@@ -3,4 +3,9 @@ body {
   padding: 0;
   margin: 0;
   font-family: 'Noto Sans KR', sans-serif;
+
+  background-color: #ebedf3;
+
+  /* 최소 가로 너비 1280px 설정 */
+  min-width: 1280px;
 }

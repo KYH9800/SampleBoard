@@ -1,12 +1,11 @@
 import styled from 'styled-components';
+import Link from 'next/link';
 
 export const LayoutWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 20px;
-
-  background-color: #ebedf3;
 `;
 
 export const Header = styled.header`
@@ -26,8 +25,41 @@ export const NavbarFooter = styled.sub`
 `;
 
 export const Main = styled.main`
-  height: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+
+  margin: 0 auto;
 
   width: 1280px;
-  margin: auto;
+`;
+
+export const Aside = styled.aside`
+  width: 360px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+`;
+
+export const LoginSection = styled.aside`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+`;
+
+export const Section = styled.section`
+  display: flex;
+  justify-content: space-between;
+`;
+
+export const CustomLink = styled(Link)`
+  color: rgba(0, 0, 0, 0.5);
+  text-decoration: none;
+  font-size: 15px;
+
+  :hover {
+    color: black;
+  }
 `;
