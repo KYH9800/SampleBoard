@@ -26,7 +26,7 @@ export const SearchForm = styled.form`
   justify-content: center;
   align-items: center;
 
-  height: 44px;
+  height: 40px;
 
   border-radius: 16px;
   border: 2px solid #bbb;
