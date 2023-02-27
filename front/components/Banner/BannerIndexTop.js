@@ -1,7 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
 // styled-components
-import { BoxWrapper } from '../../styles/pages/HomeSt';
 import { BannerImg } from '../../styles/components/Banners/BannerIndexTopSt';
 
 // index top
