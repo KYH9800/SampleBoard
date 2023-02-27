@@ -13,7 +13,7 @@ import {
 
 const BoardEntry = ({ data }) => {
   return (
-    <ListCustomLink href="/free/#">
+    <ListCustomLink href="#">
       <BoarderListTileLine id="boarderListTileLine">
         <div id="titleContainer">
           <BoardTilte>{data.title}</BoardTilte>
