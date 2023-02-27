@@ -5,13 +5,11 @@ import { HomeItemBox, BoxHeader, ImageBox } from '../../styles/pages/HomeSt';
 // components
 import ImageEntry from './ImageEntry';
 
+// mockData
+import { gallery_fake_data } from '../../MockDatas/MockData';
+
 // 갤러리
 const GalleryBoardBox = () => {
-  const fake_data = {
-    src: '/images/1672023331502-3o43kwpfrii.jpg',
-    content: '재택근무 데스크 ...',
-  };
-
   return (
     <HomeItemBox>
       <BoxHeader>
@@ -24,12 +22,12 @@ const GalleryBoardBox = () => {
       </BoxHeader>
 
       <ImageBox>
-        <ImageEntry data={fake_data} />
-        <ImageEntry data={fake_data} />
-        <ImageEntry data={fake_data} />
-        <ImageEntry data={fake_data} />
-        <ImageEntry data={fake_data} />
-        <ImageEntry data={fake_data} />
+        <ImageEntry data={gallery_fake_data} />
+        <ImageEntry data={gallery_fake_data} />
+        <ImageEntry data={gallery_fake_data} />
+        <ImageEntry data={gallery_fake_data} />
+        <ImageEntry data={gallery_fake_data} />
+        <ImageEntry data={gallery_fake_data} />
       </ImageBox>
     </HomeItemBox>
   );

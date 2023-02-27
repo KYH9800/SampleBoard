@@ -6,13 +6,11 @@ import { HomeItemBox, BoxHeader, ImageBox } from '../../styles/pages/HomeSt';
 // components
 import ImageEntry from './ImageEntry';
 
+// mockData
+import { youtube_fake_data } from '../../MockDatas/MockData';
+
 // 유튜브
 const YoutubeBoardBox = () => {
-  const fake_data = {
-    src: '/images/hqdefault.jpg',
-    content: `TAEYEON 태연 '...`,
-  };
-
   return (
     <HomeItemBox>
       <BoxHeader>
@@ -25,12 +23,12 @@ const YoutubeBoardBox = () => {
       </BoxHeader>
 
       <ImageBox>
-        <ImageEntry data={fake_data} />
-        <ImageEntry data={fake_data} />
-        <ImageEntry data={fake_data} />
-        <ImageEntry data={fake_data} />
-        <ImageEntry data={fake_data} />
-        <ImageEntry data={fake_data} />
+        <ImageEntry data={youtube_fake_data} />
+        <ImageEntry data={youtube_fake_data} />
+        <ImageEntry data={youtube_fake_data} />
+        <ImageEntry data={youtube_fake_data} />
+        <ImageEntry data={youtube_fake_data} />
+        <ImageEntry data={youtube_fake_data} />
       </ImageBox>
     </HomeItemBox>
   );
