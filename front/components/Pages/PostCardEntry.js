@@ -7,7 +7,7 @@ import { ImageBox, PostInfo, TitleContainer, PostImg, ImageEtc } from '../../sty
 const PostCardEntry = ({ data }) => {
   return (
     <>
-      <Link href="/gallery/#">
+      <Link href="#">
         <ImageBox>
           <PostImg src={data.src} />
         </ImageBox>
