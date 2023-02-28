@@ -3,16 +3,19 @@ import { useRouter } from 'next/router';
 // AppLayout
 import AppLayout from '../../components/AppLayout/AppLayout';
 // components
-import YoutubeDetailPage from '../../components/Pages/YoutubeDetailPage';
+import PostDetailPage from '../../components/Pages/Detail/PostDetailPage';
+
+// MockData
+import { youtube_card_fake_data } from '../../MockDatas/MockData';
 
 const YoutubeDetail = () => {
   const router = useRouter();
   const { id } = router.query;
-  console.log('router query: ', id);
+  // console.log('router query: ', id);
 
   return (
     <AppLayout>
-      <YoutubeDetailPage />
+      <PostDetailPage data={youtube_card_fake_data} />
     </AppLayout>
   );
 };

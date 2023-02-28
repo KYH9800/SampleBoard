@@ -3,16 +3,19 @@ import { useRouter } from 'next/router';
 // AppLayout
 import AppLayout from '../../components/AppLayout/AppLayout';
 // components
-import GalleryDetailPage from '../../components/Pages/GalleryDetailPage';
+import PostDetailPage from '../../components/Pages/Detail/PostDetailPage';
+
+// MockData
+import { gallery_card_fake_data } from '../../MockDatas/MockData';
 
 const GalleryDetail = () => {
   const router = useRouter();
   const { id } = router.query;
-  console.log('router query: ', id);
+  // console.log('router query: ', id);
 
   return (
     <AppLayout>
-      <GalleryDetailPage />
+      <PostDetailPage data={gallery_card_fake_data} />
     </AppLayout>
   );
 };
