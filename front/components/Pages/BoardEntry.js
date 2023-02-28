@@ -13,7 +13,7 @@ import {
 
 const BoardEntry = ({ data }) => {
   return (
-    <ListCustomLink href="#">
+    <ListCustomLink href={`${data.category}/${data.id}`}>
       <BoarderListTileLine id="boarderListTileLine">
         <div id="titleContainer">
           <BoardTilte>{data.title}</BoardTilte>

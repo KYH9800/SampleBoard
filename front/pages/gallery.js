@@ -48,8 +48,8 @@ const Gallery = () => {
       </TitleContainer>
 
       <PostCardList id="post-card-list">
-        {gallery_card_fake_data.map((data) => (
-          <PostCardEntry data={data} />
+        {gallery_card_fake_data.map((data, idx) => (
+          <PostCardEntry key={idx} data={data} />
         ))}
       </PostCardList>
     </AppLayout>

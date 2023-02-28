@@ -48,8 +48,8 @@ const Youtube = () => {
       </TitleContainer>
 
       <PostCardList id="post-card-list">
-        {youtube_card_fake_data.map((data) => (
-          <PostCardEntry data={data} />
+        {youtube_card_fake_data.map((data, idx) => (
+          <PostCardEntry key={idx} data={data} />
         ))}
       </PostCardList>
     </AppLayout>

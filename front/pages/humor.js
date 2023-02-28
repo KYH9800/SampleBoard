@@ -16,7 +16,7 @@ import {
 import BoardEntry from '../components/Pages/BoardEntry';
 
 // mockData
-import { free_board_fake_data } from '../MockDatas/MockData';
+import { humor_board_fake_data } from '../MockDatas/MockData';
 
 // 유머게시판
 const Humor = () => {
@@ -55,7 +55,7 @@ const Humor = () => {
       </TitleContainer>
 
       <BoarderList id="boarderList">
-        {free_board_fake_data.map((data, idx) => (
+        {humor_board_fake_data.map((data, idx) => (
           <BoardEntry key={idx} data={data} />
         ))}
       </BoarderList>
