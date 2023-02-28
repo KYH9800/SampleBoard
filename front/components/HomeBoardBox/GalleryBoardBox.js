@@ -6,7 +6,7 @@ import { HomeItemBox, BoxHeader, ImageBox } from '../../styles/pages/HomeSt';
 import ImageEntry from './ImageEntry';
 
 // mockData
-import { gallery_fake_data } from '../../MockDatas/MockData';
+import { gallery_card_fake_data } from '../../MockDatas/MockData';
 
 // 갤러리
 const GalleryBoardBox = () => {
@@ -22,12 +22,9 @@ const GalleryBoardBox = () => {
       </BoxHeader>
 
       <ImageBox>
-        <ImageEntry data={gallery_fake_data} />
-        <ImageEntry data={gallery_fake_data} />
-        <ImageEntry data={gallery_fake_data} />
-        <ImageEntry data={gallery_fake_data} />
-        <ImageEntry data={gallery_fake_data} />
-        <ImageEntry data={gallery_fake_data} />
+        {gallery_card_fake_data.slice(0, 6).map((data, idx) => {
+          return <ImageEntry key={idx} data={data} />;
+        })}
       </ImageBox>
     </HomeItemBox>
   );
