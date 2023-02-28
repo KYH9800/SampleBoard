@@ -6,7 +6,7 @@ import { HomeItemBox, BoxHeader, TextBox } from '../../styles/pages/HomeSt';
 import TextEntry from './TextEntry';
 
 // mockData
-import { free_fake_data } from '../../MockDatas/MockData';
+import { free_board_fake_data } from '../../MockDatas/MockData';
 
 // 자유게시판
 const FreeBoardBox = () => {
@@ -22,14 +22,9 @@ const FreeBoardBox = () => {
       </BoxHeader>
 
       <TextBox>
-        <TextEntry data={free_fake_data} />
-        <TextEntry data={free_fake_data} />
-        <TextEntry data={free_fake_data} />
-        <TextEntry data={free_fake_data} />
-        <TextEntry data={free_fake_data} />
-        <TextEntry data={free_fake_data} />
-        <TextEntry data={free_fake_data} />
-        <TextEntry data={free_fake_data} />
+        {free_board_fake_data.slice(0, 8).map((data, idx) => {
+          return <TextEntry key={idx} data={data} />;
+        })}
       </TextBox>
     </HomeItemBox>
   );

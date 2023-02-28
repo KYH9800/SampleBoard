@@ -7,7 +7,7 @@ import { HomeItemBox, BoxHeader, TextBox } from '../../styles/pages/HomeSt';
 import TextEntry from './TextEntry';
 
 // mockData
-import { notice_fake_data } from '../../MockDatas/MockData';
+import { notice_board_fake_data } from '../../MockDatas/MockData';
 
 // 공지사항
 const NoticeBoardBox = () => {
@@ -23,14 +23,9 @@ const NoticeBoardBox = () => {
       </BoxHeader>
 
       <TextBox>
-        <TextEntry data={notice_fake_data} />
-        <TextEntry data={notice_fake_data} />
-        <TextEntry data={notice_fake_data} />
-        <TextEntry data={notice_fake_data} />
-        <TextEntry data={notice_fake_data} />
-        <TextEntry data={notice_fake_data} />
-        <TextEntry data={notice_fake_data} />
-        <TextEntry data={notice_fake_data} />
+        {notice_board_fake_data.slice(0, 8).map((data, idx) => {
+          return <TextEntry key={idx} data={data} />;
+        })}
       </TextBox>
     </HomeItemBox>
   );

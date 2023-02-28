@@ -7,7 +7,7 @@ import { HomeItemBox, BoxHeader, ImageBox } from '../../styles/pages/HomeSt';
 import ImageEntry from './ImageEntry';
 
 // mockData
-import { youtube_fake_data } from '../../MockDatas/MockData';
+import { youtube_card_fake_data } from '../../MockDatas/MockData';
 
 // 유튜브
 const YoutubeBoardBox = () => {
@@ -23,12 +23,9 @@ const YoutubeBoardBox = () => {
       </BoxHeader>
 
       <ImageBox>
-        <ImageEntry data={youtube_fake_data} />
-        <ImageEntry data={youtube_fake_data} />
-        <ImageEntry data={youtube_fake_data} />
-        <ImageEntry data={youtube_fake_data} />
-        <ImageEntry data={youtube_fake_data} />
-        <ImageEntry data={youtube_fake_data} />
+        {youtube_card_fake_data.slice(0, 6).map((data, idx) => {
+          return <ImageEntry key={idx} data={data} />;
+        })}
       </ImageBox>
     </HomeItemBox>
   );

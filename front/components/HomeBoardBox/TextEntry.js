@@ -7,7 +7,9 @@ const TextEntry = ({ data }) => {
     <TextBoxWrapper>
       <TextArticle>
         <div>
-          <CustomLink href="#">{data.content}</CustomLink>
+          <CustomLink href={`/${data.category}/${data.id}`}>
+            {data.title?.length > 30 ? data.title.substr(0, 30) + '...' : data.title}
+          </CustomLink>
         </div>
         <div>
           <span>

@@ -7,12 +7,12 @@ const ImageEntry = ({ data }) => {
   return (
     <ImageEntryBoxWrapper>
       <div>
-        <Link href="#">
+        <Link href={`/${data.category}/${data.id}`}>
           <CustomImage src={data.src} alt="이미지" />
         </Link>
       </div>
       <div>
-        <CustomLink href="#">{data.content}</CustomLink>
+        <CustomLink href="#">{data.title?.length > 7 ? data.title.substr(0, 7) + '...' : data.title}</CustomLink>
       </div>
     </ImageEntryBoxWrapper>
   );
