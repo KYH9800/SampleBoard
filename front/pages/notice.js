@@ -16,7 +16,7 @@ import {
 import BoardEntry from '../components/Pages/BoardEntry';
 
 // mockData
-import { free_board_fake_data } from '../MockDatas/MockData';
+import { notice_board_fake_data } from '../MockDatas/MockData';
 
 // 공지사항
 const Notice = () => {
@@ -55,7 +55,7 @@ const Notice = () => {
       </TitleContainer>
 
       <BoarderList id="boarderList">
-        {free_board_fake_data.map((data, idx) => (
+        {notice_board_fake_data.map((data, idx) => (
           <BoardEntry key={idx} data={data} />
         ))}
       </BoarderList>

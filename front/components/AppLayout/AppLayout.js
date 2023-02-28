@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import PropTypes from 'prop-types';
 // components
 import SubNavbar from '../Navbar/SubNavbar';
@@ -21,8 +22,6 @@ import {
   CustomLink,
   ButtonList,
 } from '../../styles/components/AppLayout/AppLayoutSt';
-import styled from 'styled-components';
-import Link from 'next/link';
 
 /********************************
  * 세로 1280px 이하부터 탭/모바일 반응형
