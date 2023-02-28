@@ -9,6 +9,10 @@ export const LayoutWrapper = styled.div`
 `;
 
 export const Header = styled.header`
+  position: sticky;
+  top: -148px;
+  z-index: 999;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -22,6 +26,7 @@ export const NavbarFooter = styled.sub`
   background-color: #888;
 
   width: 100%;
+  height: 100%;
 `;
 
 export const Main = styled.main`
