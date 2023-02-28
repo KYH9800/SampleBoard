@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const NavbarWrapper = styled.div`
   position: relative;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -93,7 +94,7 @@ export const CommunityUl = styled.ul`
 
 export const MoreComunity = styled.div`
   position: absolute;
-  top: 60px;
+  top: 59px;
 
   display: none;
 
