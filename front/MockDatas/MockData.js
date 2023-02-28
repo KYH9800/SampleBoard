@@ -100,7 +100,7 @@ export const free_board_fake_data = [
     user_name: '고윤혁',
     permission_name: '관리자',
     datetime: '02-28',
-    src: '/images/1672023331502-3o43kwpfrii.jpg',
+    src: 'https://pbs.twimg.com/media/C_j5ZDYUIAAf4Ov.jpg:large',
     category: 'free',
   },
   {
@@ -109,7 +109,7 @@ export const free_board_fake_data = [
     user_name: '제니',
     permission_name: '회원',
     datetime: '02-28',
-    src: '/images/1672013915421-8igym60y0pc.png',
+    src: 'https://pbs.twimg.com/media/C_j5ZDYUIAAf4Ov.jpg:large',
     category: 'free',
   },
   {
@@ -118,7 +118,7 @@ export const free_board_fake_data = [
     user_name: '지수',
     permission_name: '사용자',
     datetime: '02-28',
-    src: '/images/1672023331502-3o43kwpfrii.jpg',
+    src: 'https://pbs.twimg.com/media/C_j5ZDYUIAAf4Ov.jpg:large',
     category: 'free',
   },
   {
@@ -127,7 +127,7 @@ export const free_board_fake_data = [
     user_name: '우정잉',
     permission_name: '사용자',
     datetime: '02-28',
-    src: '/images/1672012681262-hs0lrry3puu.png',
+    src: 'https://pbs.twimg.com/media/C_j5ZDYUIAAf4Ov.jpg:large',
     category: 'free',
   },
   {
@@ -136,7 +136,7 @@ export const free_board_fake_data = [
     user_name: '곽튜브',
     permission_name: '사용자',
     datetime: '02-28',
-    src: '/images/1672023331502-3o43kwpfrii.jpg',
+    src: 'https://pbs.twimg.com/media/C_j5ZDYUIAAf4Ov.jpg:large',
     category: 'free',
   },
   {
@@ -145,7 +145,7 @@ export const free_board_fake_data = [
     user_name: '강지영',
     permission_name: '아나운서',
     datetime: '02-28',
-    src: '/images/1672013915421-8igym60y0pc.png',
+    src: 'https://pbs.twimg.com/media/C_j5ZDYUIAAf4Ov.jpg:large',
     category: 'free',
   },
   {
@@ -154,7 +154,7 @@ export const free_board_fake_data = [
     user_name: '강지영',
     permission_name: '아나운서',
     datetime: '02-28',
-    src: '/images/1672023331502-3o43kwpfrii.jpg',
+    src: 'https://pbs.twimg.com/media/C_j5ZDYUIAAf4Ov.jpg:large',
     category: 'free',
   },
   {
@@ -163,7 +163,7 @@ export const free_board_fake_data = [
     user_name: '태연',
     permission_name: '회원',
     datetime: '02-28',
-    src: '/images/hqdefault.jpg',
+    src: 'https://pbs.twimg.com/media/C_j5ZDYUIAAf4Ov.jpg:large',
     category: 'free',
   },
   {
@@ -172,7 +172,7 @@ export const free_board_fake_data = [
     user_name: '유재석',
     permission_name: '회원',
     datetime: '02-28',
-    src: '/images/1672023331502-3o43kwpfrii.jpg',
+    src: 'https://pbs.twimg.com/media/C_j5ZDYUIAAf4Ov.jpg:large',
     category: 'free',
   },
 ];
@@ -185,7 +185,7 @@ export const humor_board_fake_data = [
     user_name: '고윤혁',
     permission_name: '관리자',
     datetime: '02-28',
-    src: '/images/1672023331502-3o43kwpfrii.jpg',
+    src: 'https://pbs.twimg.com/media/C_j5ZDYUIAAf4Ov.jpg:large',
     category: 'humor',
   },
   {
@@ -194,7 +194,7 @@ export const humor_board_fake_data = [
     user_name: '제니',
     permission_name: '회원',
     datetime: '02-28',
-    src: '/images/1672013915421-8igym60y0pc.png',
+    src: 'https://pbs.twimg.com/media/C_j5ZDYUIAAf4Ov.jpg:large',
     category: 'humor',
   },
   {
@@ -203,7 +203,7 @@ export const humor_board_fake_data = [
     user_name: '지수',
     permission_name: '사용자',
     datetime: '02-28',
-    src: '/images/1672023331502-3o43kwpfrii.jpg',
+    src: 'https://pbs.twimg.com/media/C_j5ZDYUIAAf4Ov.jpg:large',
     category: 'humor',
   },
   {
@@ -212,7 +212,7 @@ export const humor_board_fake_data = [
     user_name: '우정잉',
     permission_name: '사용자',
     datetime: '02-28',
-    src: '/images/1672012681262-hs0lrry3puu.png',
+    src: 'https://pbs.twimg.com/media/C_j5ZDYUIAAf4Ov.jpg:large',
     category: 'humor',
   },
   {
@@ -221,7 +221,7 @@ export const humor_board_fake_data = [
     user_name: '곽튜브',
     permission_name: '사용자',
     datetime: '02-28',
-    src: '/images/1672023331502-3o43kwpfrii.jpg',
+    src: 'https://pbs.twimg.com/media/C_j5ZDYUIAAf4Ov.jpg:large',
     category: 'humor',
   },
   {
@@ -230,7 +230,7 @@ export const humor_board_fake_data = [
     user_name: '강지영',
     permission_name: '아나운서',
     datetime: '02-28',
-    src: '/images/1672013915421-8igym60y0pc.png',
+    src: 'https://pbs.twimg.com/media/C_j5ZDYUIAAf4Ov.jpg:large',
     category: 'humor',
   },
   {
@@ -239,7 +239,7 @@ export const humor_board_fake_data = [
     user_name: '강지영',
     permission_name: '아나운서',
     datetime: '02-28',
-    src: '/images/1672023331502-3o43kwpfrii.jpg',
+    src: 'https://pbs.twimg.com/media/C_j5ZDYUIAAf4Ov.jpg:large',
     category: 'humor',
   },
   {
@@ -248,7 +248,7 @@ export const humor_board_fake_data = [
     user_name: '태연',
     permission_name: '회원',
     datetime: '02-28',
-    src: '/images/hqdefault.jpg',
+    src: 'https://pbs.twimg.com/media/C_j5ZDYUIAAf4Ov.jpg:large',
     category: 'humor',
   },
   {
@@ -257,7 +257,7 @@ export const humor_board_fake_data = [
     user_name: '유재석',
     permission_name: '회원',
     datetime: '02-28',
-    src: '/images/1672023331502-3o43kwpfrii.jpg',
+    src: 'https://pbs.twimg.com/media/C_j5ZDYUIAAf4Ov.jpg:large',
     category: 'humor',
   },
 ];
@@ -270,7 +270,7 @@ export const notice_board_fake_data = [
     user_name: '고윤혁',
     permission_name: '관리자',
     datetime: '02-28',
-    src: '/images/1672023331502-3o43kwpfrii.jpg',
+    src: 'https://pbs.twimg.com/media/C_j5ZDYUIAAf4Ov.jpg:large',
     category: 'notice',
   },
   {
@@ -279,7 +279,7 @@ export const notice_board_fake_data = [
     user_name: '제니',
     permission_name: '회원',
     datetime: '02-28',
-    src: '/images/1672013915421-8igym60y0pc.png',
+    src: 'https://pbs.twimg.com/media/C_j5ZDYUIAAf4Ov.jpg:large',
     category: 'notice',
   },
   {
@@ -288,7 +288,7 @@ export const notice_board_fake_data = [
     user_name: '지수',
     permission_name: '사용자',
     datetime: '02-28',
-    src: '/images/1672023331502-3o43kwpfrii.jpg',
+    src: 'https://pbs.twimg.com/media/C_j5ZDYUIAAf4Ov.jpg:large',
     category: 'notice',
   },
   {
@@ -297,7 +297,7 @@ export const notice_board_fake_data = [
     user_name: '우정잉',
     permission_name: '사용자',
     datetime: '02-28',
-    src: '/images/1672012681262-hs0lrry3puu.png',
+    src: 'https://pbs.twimg.com/media/C_j5ZDYUIAAf4Ov.jpg:large',
     category: 'notice',
   },
   {
@@ -306,7 +306,7 @@ export const notice_board_fake_data = [
     user_name: '곽튜브',
     permission_name: '사용자',
     datetime: '02-28',
-    src: '/images/1672023331502-3o43kwpfrii.jpg',
+    src: 'https://pbs.twimg.com/media/C_j5ZDYUIAAf4Ov.jpg:large',
     category: 'notice',
   },
   {
@@ -315,7 +315,7 @@ export const notice_board_fake_data = [
     user_name: '강지영',
     permission_name: '아나운서',
     datetime: '02-28',
-    src: '/images/1672013915421-8igym60y0pc.png',
+    src: 'https://pbs.twimg.com/media/C_j5ZDYUIAAf4Ov.jpg:large',
     category: 'notice',
   },
   {
@@ -324,7 +324,7 @@ export const notice_board_fake_data = [
     user_name: '강지영',
     permission_name: '아나운서',
     datetime: '02-28',
-    src: '/images/1672023331502-3o43kwpfrii.jpg',
+    src: 'https://pbs.twimg.com/media/C_j5ZDYUIAAf4Ov.jpg:large',
     category: 'notice',
   },
   {
@@ -333,7 +333,7 @@ export const notice_board_fake_data = [
     user_name: '태연',
     permission_name: '회원',
     datetime: '02-28',
-    src: '/images/hqdefault.jpg',
+    src: 'https://pbs.twimg.com/media/C_j5ZDYUIAAf4Ov.jpg:large',
     category: 'notice',
   },
   {
@@ -342,7 +342,7 @@ export const notice_board_fake_data = [
     user_name: '유재석',
     permission_name: '회원',
     datetime: '02-28',
-    src: '/images/1672023331502-3o43kwpfrii.jpg',
+    src: 'https://pbs.twimg.com/media/C_j5ZDYUIAAf4Ov.jpg:large',
     category: 'notice',
   },
 ];
@@ -351,8 +351,8 @@ export const notice_board_fake_data = [
 export const gallery_card_fake_data = [
   {
     id: 'tD7EyBmZcLH',
-    src: '/images/1672023331502-3o43kwpfrii.jpg',
-    title: '재택근무 데스크 셋업',
+    src: 'https://pbs.twimg.com/media/C_j5ZDYUIAAf4Ov.jpg:large',
+    title: '강지영 아나운서 보고가세요.',
     user_name: '강지영',
     permission_name: '아나운서',
     datetime: '02-28',
@@ -360,8 +360,8 @@ export const gallery_card_fake_data = [
   },
   {
     id: 'tD7EyBmZcLH',
-    src: '/images/1672023331502-3o43kwpfrii.jpg',
-    title: '재택근무 데스크 셋업',
+    src: 'https://pbs.twimg.com/media/C_j5ZDYUIAAf4Ov.jpg:large',
+    title: '강지영 아나운서 보고가세요.',
     user_name: '강지영',
     permission_name: '아나운서',
     datetime: '02-28',
@@ -369,8 +369,8 @@ export const gallery_card_fake_data = [
   },
   {
     id: 'tD7EyBmZcLH',
-    src: '/images/1672023331502-3o43kwpfrii.jpg',
-    title: '재택근무 데스크 셋업',
+    src: 'https://pbs.twimg.com/media/C_j5ZDYUIAAf4Ov.jpg:large',
+    title: '강지영 아나운서 보고가세요.',
     user_name: '강지영',
     permission_name: '아나운서',
     datetime: '02-28',
@@ -378,8 +378,8 @@ export const gallery_card_fake_data = [
   },
   {
     id: 'tD7EyBmZcLH',
-    src: '/images/1672023331502-3o43kwpfrii.jpg',
-    title: '재택근무 데스크 셋업',
+    src: 'https://pbs.twimg.com/media/C_j5ZDYUIAAf4Ov.jpg:large',
+    title: '강지영 아나운서 보고가세요.',
     user_name: '강지영',
     permission_name: '아나운서',
     datetime: '02-28',
@@ -387,8 +387,8 @@ export const gallery_card_fake_data = [
   },
   {
     id: 'tD7EyBmZcLH',
-    src: '/images/1672023331502-3o43kwpfrii.jpg',
-    title: '재택근무 데스크 셋업',
+    src: 'https://pbs.twimg.com/media/C_j5ZDYUIAAf4Ov.jpg:large',
+    title: '강지영 아나운서 보고가세요.',
     user_name: '강지영',
     permission_name: '아나운서',
     datetime: '02-28',
@@ -396,8 +396,8 @@ export const gallery_card_fake_data = [
   },
   {
     id: 'tD7EyBmZcLH',
-    src: '/images/1672023331502-3o43kwpfrii.jpg',
-    title: '재택근무 데스크 셋업',
+    src: 'https://pbs.twimg.com/media/C_j5ZDYUIAAf4Ov.jpg:large',
+    title: '강지영 아나운서 보고가세요.',
     user_name: '강지영',
     permission_name: '아나운서',
     datetime: '02-28',
@@ -405,8 +405,8 @@ export const gallery_card_fake_data = [
   },
   {
     id: 'tD7EyBmZcLH',
-    src: '/images/1672023331502-3o43kwpfrii.jpg',
-    title: '재택근무 데스크 셋업',
+    src: 'https://pbs.twimg.com/media/C_j5ZDYUIAAf4Ov.jpg:large',
+    title: '강지영 아나운서 보고가세요.',
     user_name: '강지영',
     permission_name: '아나운서',
     datetime: '02-28',
@@ -489,3 +489,14 @@ export const youtube_card_fake_data = [
     category: 'youtube',
   },
 ];
+
+//* 상세 게시글 페이크 데이터
+export const post_data = {
+  src: 'https://pbs.twimg.com/media/C_j5ZDYUIAAf4Ov.jpg:large',
+  content: '강지영 아나운서가 이상형\n진짜 청순 섹시 지적이미지 반전 보이스 다 있음\n영어도 잘함\n완벽 그 잡채',
+};
+
+//* 상세 유튜브 페이크 데이터
+export const youtube_data = {
+  src: 'https://i.ytimg.com/vi_webp/AbZH7XWDW_k/maxresdefault.webp',
+};
