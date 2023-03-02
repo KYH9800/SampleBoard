@@ -13,6 +13,7 @@ import Footer from './Footer';
 import {
   LayoutWrapper,
   Header,
+  SubNavbarLine,
   NavbarFooter,
   Main,
   Aside,
@@ -35,8 +36,12 @@ const AppLayout = ({ children }) => {
   return (
     <LayoutWrapper>
       <Header>
-        <SubNavbar />
-        <MainNavbar />
+        <SubNavbarLine>
+          <SubNavbar />
+        </SubNavbarLine>
+        <SubNavbarLine>
+          <MainNavbar />
+        </SubNavbarLine>
         <NavbarFooter>
           <Navbar />
         </NavbarFooter>

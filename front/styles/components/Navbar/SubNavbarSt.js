@@ -16,6 +16,18 @@ export const SubWrapper = styled.div`
   }
 `;
 
+export const LoginUser = styled.div`
+  padding: 10px;
+  color: #000;
+
+  font-size: 16.9px;
+
+  span {
+    color: #2d2b2b;
+    font-weight: 700;
+  }
+`;
+
 export const ColumnLine = styled.div`
   border-left: thin solid rgba(0, 0, 0, 0.2);
 

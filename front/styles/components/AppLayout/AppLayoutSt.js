@@ -10,19 +10,27 @@ export const LayoutWrapper = styled.div`
 
 export const Header = styled.header`
   position: sticky;
-  top: -148px;
+  top: -130px;
   z-index: 999;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  /* gap: 10px; */
 
   background-color: #fff;
 `;
 
+export const SubNavbarLine = styled.div`
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  width: 100%;
+`;
+
 export const NavbarFooter = styled.sub`
+  background-color: rgba(0, 0, 0, 0.1);
   background-color: #888;
 
   width: 100%;
