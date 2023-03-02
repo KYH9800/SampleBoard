@@ -10,12 +10,12 @@ export const NavbarWrapper = styled.div`
   width: 1280px;
   margin: auto;
 
-  background-color: #888;
+  /* background-color: #888; */
 `;
 
 export const CustomUl = styled.ul`
   cursor: pointer;
-  background-color: rgba(0, 0, 0, 0.1);
+  /* background-color: rgba(0, 0, 0, 0.1); */
 
   text-align: center;
 
@@ -41,6 +41,7 @@ export const CustomUl = styled.ul`
     a {
       color: #00ffa8;
     }
+
     background-color: #222c;
   }
 `;
@@ -58,7 +59,7 @@ export const Community = styled.p`
 
 export const CommunityUl = styled.ul`
   cursor: pointer;
-  background-color: rgba(0, 0, 0, 0.1);
+  /* background-color: rgba(0, 0, 0, 0.1); */
 
   text-align: center;
 
@@ -99,7 +100,7 @@ export const MoreComunity = styled.div`
   display: none;
 
   color: #fff;
-  background-color: rgba(0, 0, 0, 0.1);
+  /* background-color: rgba(0, 0, 0, 0.1); */
 
   box-shadow: 0 0 20px 0 rgb(0 0 0 / 15%);
 
