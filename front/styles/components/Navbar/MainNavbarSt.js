@@ -38,6 +38,7 @@ export const SearchForm = styled.form`
 
 // 검색 버튼
 export const SearchInput = styled.input`
+  background-color: #fff;
   border: none;
   padding: 0 18px;
 
