@@ -5,15 +5,7 @@ import Head from 'next/head';
 import AppLayoutWithoutSide from '../components/AppLayout/AppLayoutWithoutSide';
 // styled-components
 import { Button } from '../styles/components/LoginBox/LoginBoxSt';
-import {
-  Article,
-  SignupTilteWord,
-  Form,
-  Input,
-  KakaoLoginWrapper,
-  KakaoLoginBtn,
-  BottomButton,
-} from '../styles/pages/LoginSt';
+import { Article, SignupTilteWord, Form, Input, KakaoLoginWrapper, BottomButton } from '../styles/pages/LoginSt';
 
 // 회원가입
 const Signup = () => {
@@ -55,8 +47,9 @@ const Signup = () => {
           <Link href="/login">로그인</Link>
         </BottomButton>
 
-        <KakaoLoginWrapper style={{ width: '100%' }}>
-          <KakaoLoginBtn src="/images/kakao_login_medium_wide.png" onClick={KakaoLoginClick} />
+        <KakaoLoginWrapper onClick={KakaoLoginClick}>
+          <img src="/images/kakao_logo.svg" />
+          <p>카카오로 바로 시작하기</p>
         </KakaoLoginWrapper>
       </Article>
     </AppLayoutWithoutSide>
