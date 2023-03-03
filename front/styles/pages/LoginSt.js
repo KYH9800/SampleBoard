@@ -49,18 +49,29 @@ export const Input = styled.input`
 `;
 
 export const KakaoLoginWrapper = styled.div`
+  cursor: pointer;
+  user-select: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: start;
+
   background-color: #fee502;
   text-align: center;
 
   border-radius: 8px;
   border: unset;
 
+  width: 100%;
   height: 50px;
-`;
 
-export const KakaoLoginBtn = styled.img`
-  cursor: pointer;
-  width: 320px;
+  p {
+    padding: 0 18.5%;
+  }
+
+  img {
+    margin: 0 15px;
+  }
 `;
 
 export const BottomButton = styled.div`
