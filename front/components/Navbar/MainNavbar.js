@@ -25,7 +25,7 @@ const MainNavbar = () => {
     <MainNavbarWrapper>
       <div>
         <CustomLink href="/">
-          <LogoImg src="/images/waffleBoard.svg" />
+          <LogoImg src="/images/sample_logo.jpeg" />
         </CustomLink>
       </div>
       <SearchForm onSubmit={onSubmitEvent}>

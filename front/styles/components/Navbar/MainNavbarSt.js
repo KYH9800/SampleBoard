@@ -4,10 +4,11 @@ import Link from 'next/link';
 export const MainNavbarWrapper = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
   width: 1280px;
 
-  padding: 20px 0;
+  padding: 5px 0;
 `;
 
 export const CustomLink = styled(Link)`
@@ -17,7 +18,8 @@ export const CustomLink = styled(Link)`
 
 // 와플보드 로고
 export const LogoImg = styled.img`
-  height: 31px;
+  height: 55px;
+  border-radius: 5px;
 `;
 
 // 검색창 박스
