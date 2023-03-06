@@ -2,50 +2,42 @@
 const { Model } = require('sequelize');
 
 module.exports = (sequelize, DataTypes) => {
-  class User extends Model {
+  class Post extends Model {
     static associate(models) {
-      this.hasOne(models.MyInfo, { foreignKey: 'user_id' });
-      this.hasMany(models.Post, { foreignKey: 'user_id' });
+      this.hasMany(models.PostImage, { foreignKey: 'post_id' });
+      this.hasMany(models.VideoLink, { foreignKey: 'post_id' });
+      this.hasMany(models.GalleryImage, { foreignKey: 'post_id' });
+      this.belongsTo(models.User, { foreignKey: 'user_id', onDelete: 'cascade' });
     }
   }
 
-  User.init(
+  Post.init(
     {
-      user_id: {
+      post_id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         allowNull: false,
         autoIncrement: true,
       },
-      email: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        unique: true,
-      },
-      password: {
-        type: DataTypes.STRING,
-        allowNull: true,
-      },
-
-      authority: {
+      title: {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      createdAt: {
-        type: DataTypes.DATE,
-        field: 'created_at',
+      content: {
+        type: DataTypes.STRING,
+        allowNull: false,
       },
-      updatedAt: {
-        type: DataTypes.DATE,
-        field: 'updated_at',
+      category: {
+        type: DataTypes.STRING,
+        allowNull: false,
       },
     },
     {
       sequelize,
-      modelName: 'User',
+      modelName: 'Post',
       timestamps: true,
     }
   );
 
-  return User;
+  return Post;
 };
