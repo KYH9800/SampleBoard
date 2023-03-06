@@ -30,6 +30,9 @@ db.sequelize.sync({
   force: false,
 });
 
+app.use(express.json()); // JSON형태의 데이터를 해석해줍니다.
+app.use(express.urlencoded({ extended: false })); // x-www-form-urlencoded(contentType이 urlencoded type의 경우) 형태의 데이터를 해석해준다.
+
 // 배포용 || 개발용
 if (process.env.NODE_ENV === 'production') {
   app.use(morgan('combined'));
