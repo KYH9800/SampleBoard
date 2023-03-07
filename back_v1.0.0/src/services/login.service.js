@@ -21,17 +21,27 @@ const user_login = async (email, password) => {
     throw new CustomError('이메일 및 비밀번호가 일치하지 않습니다.', 400);
   }
 
-  const acessToken = jwt.sign(
+  const accessToken = jwt.sign(
     {
       user_id: user.user_id,
     },
     process.env.JWT_SECRET_KEY,
     {
-      expiresIn: '5h',
+      expiresIn: '30s',
     }
   );
 
-  return acessToken;
+  const refreshToken = jwt.sign(
+    {
+      user_id: user.user_id,
+    },
+    process.env.JWT_SECRET_KEY,
+    {
+      expiresIn: '1800s',
+    }
+  );
+
+  return { accessToken, refreshToken };
 };
 
 module.exports = {
