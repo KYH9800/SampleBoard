@@ -5,7 +5,7 @@ router.get('/', (req, res) => {
   res.status(200).send('sample-board-api');
 });
 
-// 사용자
+// 회원가입, 로그인
 const userRouter = require('./user.routes');
 router.use('/user', userRouter);
 
