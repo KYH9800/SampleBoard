@@ -1,13 +1,16 @@
 const express = require('express');
 const router = express.Router();
 
-const UserController = require('../controllers/user.controller');
-const userController = new UserController();
+const SignupController = require('../controllers/signup.controller');
+const signupController = new SignupController();
 
-router.post('/signup', userController.signup);
+const LoginController = require('../controllers/login.controller');
+const loginController = new LoginController();
 
-router.get('/login', () => {
-  // todo
-});
+// 회원가입
+router.post('/signup', signupController.signup);
+
+// 로그인
+router.post('/login', loginController.login);
 
 module.exports = router;
