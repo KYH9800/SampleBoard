@@ -28,7 +28,7 @@ class SignupRepository {
   };
 
   // 회원가입
-  signup = async (email, password, authority, name, nickname, phone_num, adress) => {
+  signup = async (email, password, authority, name, nickname, phoneNum, adress) => {
     const user = await this.userModel.create({
       email: email,
       password: password,
@@ -39,7 +39,7 @@ class SignupRepository {
       user_id: user.user_id,
       name: name,
       nickname: nickname,
-      phone_num: phone_num,
+      phone_num: phoneNum,
       adress: adress,
     });
 

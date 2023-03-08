@@ -3,7 +3,7 @@ const { user_signup } = require('../services/signup.post.service');
 class SignupController {
   signup = async (req, res) => {
     try {
-      const { email, password, passwordConfirm, authority, name, nickname, phone_num, adress } = req.body;
+      const { email, password, passwordConfirm, authority, name, nickname, phoneNum, adress } = req.body;
 
       const singupResult = await user_signup(
         email,
@@ -12,7 +12,7 @@ class SignupController {
         authority,
         name,
         nickname,
-        phone_num,
+        phoneNum,
         adress
       );
 
