@@ -19,7 +19,7 @@ class UserController {
           status: error.statusCode,
         });
       } else {
-        return res.status(400).json({ errorMessage: '회원가입에 실패 했습니다.' });
+        return res.status(400).send({ errorMessage: '내 정보 불러오기에 실패 했습니다.' });
       }
     }
   };

@@ -27,6 +27,7 @@ function* login(action) {
       data: result.data,
     });
   } catch (err) {
+    console.log(err);
     yield put({
       type: LOGIN_FAILURE,
       error: err.response.data,
@@ -70,6 +71,7 @@ function* loadMyInfo() {
       data: result.data,
     });
   } catch (err) {
+    console.log('이거 err: ', err);
     yield put({
       type: LOAD_MY_INFO_FAILURE,
       error: err.response.data,

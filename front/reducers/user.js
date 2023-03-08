@@ -39,6 +39,16 @@ export const SIGNUP_FAILURE = 'SIGNUP_FAILURE';
 export const ADD_POST_TO_ME = 'ADD_POST_TO_ME';
 export const REMOVE_POST_OF_ME = 'REMOVE_POST_OF_ME';
 
+// action creactor
+export const loginRequestAction = (data) => ({
+  type: LOGIN_REQUEST,
+  data,
+});
+
+export const logoutRequestAction = () => ({
+  type: LOGOUT_REQUEST,
+});
+
 // reducer
 const reducer = (state = initialState, action) =>
   produce(state, (draft) => {

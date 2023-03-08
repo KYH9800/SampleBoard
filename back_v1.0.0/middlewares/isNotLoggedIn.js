@@ -5,7 +5,7 @@ const isNotLoggedIn = (req, res, next) => {
     console.log('acessToken: ', accessToken);
 
     if (accessToken) {
-      return res.status(401).send({
+      return res.status(403).send({
         errorMessage: '로그인되지 않은 사용자만 접근이 가능합니다.',
       });
     } else {
@@ -13,7 +13,7 @@ const isNotLoggedIn = (req, res, next) => {
     }
   } catch (error) {
     console.log('error: ', error);
-    res.status(401).json({ errorMessage: 'token 정보가 다릅니다.' });
+    res.status(403).json({ errorMessage: 'token 정보가 다릅니다.' });
   }
 };
 

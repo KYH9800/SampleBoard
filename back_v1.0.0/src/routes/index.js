@@ -1,10 +1,6 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/', (req, res) => {
-  res.status(200).send('sample-board-api');
-});
-
 // 회원가입, 로그인, 내 정보 조회
 const userRouter = require('./user.routes');
 router.use('/user', userRouter);

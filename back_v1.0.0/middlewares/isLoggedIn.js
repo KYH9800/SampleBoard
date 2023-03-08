@@ -5,9 +5,13 @@ const { User } = require('../models');
 function createAccessToken(id) {
   // console.log('id: ', id);
   const accessToken = jwt.sign(
-    { id: id }, // JWT DATA
+    {
+      user_id: id, // JWT DATA
+    },
     process.env.JWT_SECRET_KEY, // 비밀키
-    { expiresIn: '1h' } // Access Token이 10초 뒤에 만료되도록 설정합니다.
+    {
+      expiresIn: '1h', // Access Token이 10초 뒤에 만료되도록 설정합니다.
+    }
   );
 
   return accessToken;
@@ -27,6 +31,7 @@ function validateAccessToken(accessToken) {
 function getAccessTokenPayload(accessToken) {
   try {
     const payload = jwt.verify(accessToken, process.env.JWT_SECRET_KEY); // JWT에서 Payload를 가져옵니다.
+
     return payload;
   } catch (error) {
     return null;
@@ -62,43 +67,53 @@ const isLoggedIn = async (req, res, next) => {
     // console.log('accessToken: ', accessToken);
 
     if (!refreshToken)
-      return res.status(400).json({ errorMessage: '[Refresh Token is null] 로그인된 사용자만 접근이 가능합니다.' });
+      return res.status(403).json({ errorMessage: '[Refresh Token is null] 로그인된 사용자만 접근이 가능합니다.' });
     if (!accessToken)
-      return res.status(400).json({ errorMessage: '[Access Token is null] 로그인된 사용자만 접근이 가능합니다.' });
+      return res.status(403).json({ errorMessage: '[Access Token is null] 로그인된 사용자만 접근이 가능합니다.' });
 
     const isAccessTokenValidate = validateAccessToken(accessToken);
     // console.log('isAccessTokenValidate: ', isAccessTokenValidate);
     const isRefreshTokenValidate = validateRefreshToken(refreshToken);
     // console.log('isRefreshTokenValidate: ', isRefreshTokenValidate);
 
+    //! refresh token이 없으면 쿠키 다 지우고 로그인 화면으로 리다이렉트 하기
+    console.log('refreshToken 검증: ', isRefreshTokenValidate);
     if (!isRefreshTokenValidate) {
-      return res.status(419).json({ message: 'Refresh Token이 만료되었습니다.' });
+      console.log('여기까지는 오냐? -> 온다'); //? 쿠키가 왜 안지워질까?
+
+      res.clearCookie('refreshToken');
+      res.clearCookie('accessToken');
+
+      return res.status(403).json({ errorMessage: 'Refresh Token이 만료되었습니다.' });
     }
 
     if (!isAccessTokenValidate) {
-      const user = getRefreshTokenPayload(refreshToken);
+      // const user = getRefreshTokenPayload(refreshToken);
       // console.log('user: ', user);
       const refreshTokenId = getRefreshTokenPayload(refreshToken);
       // console.log('refreshTokenId: ', refreshTokenId);
-      if (!refreshTokenId) return res.status(419).json({ message: 'Refresh Token의 정보가 서버에 존재하지 않습니다.' });
+      if (!refreshTokenId) {
+        return res.status(403).json({ errorMessage: 'Refresh Token의 정보가 서버에 존재하지 않습니다.' });
+      }
 
-      const newAccessToken = createAccessToken(refreshTokenId);
-      // console.log('newAccessToken: ', newAccessToken);
+      const newAccessToken = createAccessToken(refreshTokenId.user_id);
+
       res.cookie('accessToken', newAccessToken);
 
-      return res.json({
-        message: 'Access Token을 새롭게 발급하였습니다.',
-        newAccessToken: newAccessToken,
-      });
+      const userNewAccessToken = getAccessTokenPayload(newAccessToken);
+
+      res.locals.user = userNewAccessToken.user_id;
+      next();
     } else {
       const user = getAccessTokenPayload(accessToken);
-      // console.log('user: ', user.user_id);
+      console.log('user: ', user);
+
       res.locals.user = user.user_id;
       next();
     }
   } catch (error) {
     console.log(error);
-    res.status(401).send({
+    return res.status(403).send({
       errorMessage: '로그인 후 이용 가능한 기능입니다.',
     });
   }
@@ -110,7 +125,7 @@ const isLoggedInForLogout = (req, res, next) => {
     // console.log('acessToken: ', accessToken);
 
     if (!accessToken) {
-      return res.status(401).send({
+      return res.status(403).send({
         errorMessage: '로그인된 사용자만 접근이 가능합니다.',
       });
     } else {
@@ -118,7 +133,7 @@ const isLoggedInForLogout = (req, res, next) => {
     }
   } catch (error) {
     console.log('error: ', error);
-    res.status(401).json({ errorMessage: '로그아웃 실패, 관리자에게 문의하세요.' });
+    res.status(403).json({ errorMessage: '로그아웃 실패, 관리자에게 문의하세요.' });
   }
 };
 

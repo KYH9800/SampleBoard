@@ -21,5 +21,4 @@ SampleBoard.propTypes = {
   Component: PropTypes.func.isRequired,
 };
 
-// export default wrapper.withRedux(SampleBoard);
 export default wrapper.withRedux(SampleBoard);
