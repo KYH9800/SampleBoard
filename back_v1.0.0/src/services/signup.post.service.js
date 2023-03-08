@@ -7,9 +7,7 @@ const { CustomError } = require('../../utils/Error');
 
 const bcrypt = require('bcrypt');
 
-const user_signup = async (email, password, passwordConfirm, authority, name, nickname, phone_num, adress) => {
-  authority = '사용자'; // 일반 사용자 권한
-
+const user_signup = async (email, password, passwordConfirm, authority, name, nickname, phoneNum, adress) => {
   const findUserEmail = await signupRepository.findEmail(email);
   const findUserNickname = await signupRepository.findNickname(nickname);
 
@@ -45,7 +43,7 @@ const user_signup = async (email, password, passwordConfirm, authority, name, ni
     throw new CustomError('닉네임이 입력되지 않았습니다.', 412);
   }
 
-  if (!phone_num) {
+  if (!phoneNum) {
     throw new CustomError('전화번호가 입력되지 않았습니다.', 412);
   }
 
@@ -65,7 +63,7 @@ const user_signup = async (email, password, passwordConfirm, authority, name, ni
     authority,
     name,
     nickname,
-    phone_num,
+    phoneNum,
     adress
   );
 
@@ -75,7 +73,7 @@ const user_signup = async (email, password, passwordConfirm, authority, name, ni
     authority: singupResult.user.authority,
     name: singupResult.myInfo.name,
     nickname: singupResult.myInfo.nickname,
-    phone_num: singupResult.myInfo.phone_num,
+    phone_num: singupResult.myInfo.phoneNum,
     adress: singupResult.myInfo.adress,
   };
 };
