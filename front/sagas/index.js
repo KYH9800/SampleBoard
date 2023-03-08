@@ -7,6 +7,8 @@ import { backURL } from '../config/config';
 
 axios.defaults.baseURL = backURL;
 axios.defaults.withCredentials = true;
+axios.defaults.xsrfCookieName = 'csrftoken';
+axios.defaults.xsrfHeaderName = 'X-CSRFTOKEN';
 
 export default function* rootSaga() {
   yield all([fork(userSaga), fork(postSaga)]);

@@ -7,8 +7,14 @@ const signupController = new SignupController();
 const LoginController = require('../controllers/login.controller');
 const loginController = new LoginController();
 
+const UserController = require('../controllers/user.controller');
+const userController = new UserController();
+
 const { isNotLoggedIn } = require('../../middlewares/isNotLoggedIn'); // 로그인되지 않은 사용자만 접근이 가능합니다.
-const { isLoggedInForLogout } = require('../../middlewares/isLoggedIn'); // 로그인된 사용자만 접근이 가능합니다.
+const { isLoggedIn, isLoggedInForLogout } = require('../../middlewares/isLoggedIn'); // 로그인된 사용자만 접근이 가능합니다.
+
+// 내 정보 불러오기
+router.get('/', isLoggedIn, userController.findUser);
 
 // 회원가입
 router.post('/signup', isNotLoggedIn, signupController.signup);

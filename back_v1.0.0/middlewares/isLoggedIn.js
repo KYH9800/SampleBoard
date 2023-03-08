@@ -3,11 +3,11 @@ const { User } = require('../models');
 
 // Access Token을 생성
 function createAccessToken(id) {
-  console.log('id: ', id);
+  // console.log('id: ', id);
   const accessToken = jwt.sign(
     { id: id }, // JWT DATA
     process.env.JWT_SECRET_KEY, // 비밀키
-    { expiresIn: '30s' } // Access Token이 10초 뒤에 만료되도록 설정합니다.
+    { expiresIn: '1h' } // Access Token이 10초 뒤에 만료되도록 설정합니다.
   );
 
   return accessToken;
@@ -57,9 +57,9 @@ function getRefreshTokenPayload(refreshToken) {
 const isLoggedIn = async (req, res, next) => {
   try {
     const refreshToken = req.cookies.refreshToken; // res.clearCookie('refresh_token');
-    console.log('refreshToken: ', refreshToken);
+    // console.log('refreshToken: ', refreshToken);
     const accessToken = req.cookies.accessToken; // res.clearCookie('refresh_token');
-    console.log('accessToken: ', accessToken);
+    // console.log('accessToken: ', accessToken);
 
     if (!refreshToken)
       return res.status(400).json({ errorMessage: '[Refresh Token is null] 로그인된 사용자만 접근이 가능합니다.' });
@@ -67,9 +67,9 @@ const isLoggedIn = async (req, res, next) => {
       return res.status(400).json({ errorMessage: '[Access Token is null] 로그인된 사용자만 접근이 가능합니다.' });
 
     const isAccessTokenValidate = validateAccessToken(accessToken);
-    console.log('isAccessTokenValidate: ', isAccessTokenValidate);
+    // console.log('isAccessTokenValidate: ', isAccessTokenValidate);
     const isRefreshTokenValidate = validateRefreshToken(refreshToken);
-    console.log('isRefreshTokenValidate: ', isRefreshTokenValidate);
+    // console.log('isRefreshTokenValidate: ', isRefreshTokenValidate);
 
     if (!isRefreshTokenValidate) {
       return res.status(419).json({ message: 'Refresh Token이 만료되었습니다.' });
@@ -77,15 +77,13 @@ const isLoggedIn = async (req, res, next) => {
 
     if (!isAccessTokenValidate) {
       const user = getRefreshTokenPayload(refreshToken);
-      console.log('user: ', user);
+      // console.log('user: ', user);
       const refreshTokenId = getRefreshTokenPayload(refreshToken);
-      console.log('refreshTokenId: ', refreshTokenId);
-
+      // console.log('refreshTokenId: ', refreshTokenId);
       if (!refreshTokenId) return res.status(419).json({ message: 'Refresh Token의 정보가 서버에 존재하지 않습니다.' });
 
       const newAccessToken = createAccessToken(refreshTokenId);
-      console.log('newAccessToken: ', newAccessToken);
-
+      // console.log('newAccessToken: ', newAccessToken);
       res.cookie('accessToken', newAccessToken);
 
       return res.json({
@@ -94,16 +92,8 @@ const isLoggedIn = async (req, res, next) => {
       });
     } else {
       const user = getAccessTokenPayload(accessToken);
-      console.log('user: ', user.id.user_id);
-
-      const user_info = await User.findOne({
-        where: {
-          user_id: user.id.user_id,
-        },
-        attributes: ['user_id', 'email', 'authority'],
-      });
-
-      res.locals.user = user_info;
+      // console.log('user: ', user.user_id);
+      res.locals.user = user.user_id;
       next();
     }
   } catch (error) {
@@ -117,7 +107,7 @@ const isLoggedIn = async (req, res, next) => {
 const isLoggedInForLogout = (req, res, next) => {
   try {
     const accessToken = req.cookies.accessToken; // res.clearCookie('refresh_token');
-    console.log('acessToken: ', accessToken);
+    // console.log('acessToken: ', accessToken);
 
     if (!accessToken) {
       return res.status(401).send({

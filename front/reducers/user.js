@@ -36,32 +36,15 @@ export const SIGNUP_REQUEST = 'SIGNUP_REQUEST';
 export const SIGNUP_SUCCESS = 'SIGNUP_SUCCESS';
 export const SIGNUP_FAILURE = 'SIGNUP_FAILURE';
 
-export const CHANGE_NICKNAME_REQUEST = 'CHANGE_NICKNAME_REQUEST';
-export const CHANGE_NICKNAME_SUCCESS = 'CHANGE_NICKNAME_SUCCESS';
-export const CHANGE_NICKNAME_FAILURE = 'CHANGE_NICKNAME_FAILURE';
-
 export const ADD_POST_TO_ME = 'ADD_POST_TO_ME';
 export const REMOVE_POST_OF_ME = 'REMOVE_POST_OF_ME';
 
-export const loginAction = (data) => {
-  console.log('loginAction data: ', data);
-  return {
-    type: LOGIN_REQUEST,
-    data,
-  };
-};
-
-export const logoutAction = () => {
-  return {
-    type: LOGOUT_REQUEST,
-  };
-};
-
-// reducer 구현
+// reducer
 const reducer = (state = initialState, action) =>
   produce(state, (draft) => {
+    // console.log('action: ', action.error?.errorMessage);
     switch (action.type) {
-      //* LOGIN
+      // 로그인
       case LOGIN_REQUEST:
         draft.loginLoading = true;
         draft.loginDone = false;
@@ -74,10 +57,10 @@ const reducer = (state = initialState, action) =>
         break;
       case LOGIN_FAILURE:
         draft.loginLoading = false;
-        draft.loginError = action.error;
+        draft.loginError = action.error?.errorMessage;
         break;
 
-      //* LOAD_MY_INFO
+      // 내 정보 가져오기
       case LOAD_MY_INFO_REQUEST:
         draft.loadMyInfoLoading = true;
         draft.loadMyInfoDone = false;
@@ -90,10 +73,10 @@ const reducer = (state = initialState, action) =>
         break;
       case LOAD_MY_INFO_FAILURE:
         draft.loadMyInfoLoading = false;
-        draft.loadMyInfoError = action.error;
+        draft.loadMyInfoError = action.error?.errorMessage;
         break;
 
-      //* LOGOUT
+      // 로그아웃
       case LOGOUT_REQUEST:
         draft.logoutLoading = true;
         draft.logoutDone = false;
@@ -107,11 +90,11 @@ const reducer = (state = initialState, action) =>
         break;
       case LOGOUT_FAILURE:
         draft.logoutLoading = false;
-        draft.logoutError = action.error;
+        draft.logoutError = action.error?.errorMessage;
         draft.me = null;
         break;
 
-      //* SIGNUP
+      // 회원가입
       case SIGNUP_REQUEST:
         draft.signupLoading = true;
         draft.signupDone = false;
@@ -123,31 +106,17 @@ const reducer = (state = initialState, action) =>
         break;
       case SIGNUP_FAILURE:
         draft.signupLoading = false;
-        draft.signupError = action.error;
+        draft.signupError = action.error?.errorMessage;
         break;
 
-      //* CHANGE_NICKNAME
-      case CHANGE_NICKNAME_REQUEST:
-        draft.changeNicknameLoading = true;
-        draft.changeNicknameDone = false;
-        draft.changeNicknameError = null;
-        break;
-      case CHANGE_NICKNAME_SUCCESS:
-        draft.changeNicknameLoading = false;
-        draft.changeNicknameDone = true;
-        draft.me.nickname = action.data.nickname;
-      case CHANGE_NICKNAME_FAILURE:
-        draft.changeNicknameLoading = false;
-        draft.changeNicknameError = action.error;
-        break;
-
-      //* ADD_POST_TO_ME
+      // 내 게시글 추가
       case ADD_POST_TO_ME:
         console.log('action.data: ', action.data);
         console.log('draft.me: ', state.me);
         draft.me.Posts.unshift({ id: action.data });
         break;
-      //! REMOVE_POST_OF_ME
+
+      // 내 게시글 삭제
       case REMOVE_POST_OF_ME:
         draft.me.Posts = draft.me.Posts.filter((v) => v.id !== action.data);
         break;
