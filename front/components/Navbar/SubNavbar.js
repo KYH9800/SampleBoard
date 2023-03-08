@@ -2,9 +2,11 @@ import React from 'react';
 import Link from 'next/link';
 // styled-components
 import { SubWrapper, LoginUser, ColumnLine, LinkWrapper } from '../../styles/components/Navbar/SubNavbarSt';
+// redux
+import { useSelector } from 'react-redux';
 
 const SubNavbar = () => {
-  // TODO
+  const { me } = useSelector((state) => state.user); // me && me.user.user_id
 
   // 다크모드 변환
   const onChangMode = () => {
@@ -21,10 +23,10 @@ const SubNavbar = () => {
         <a onClick={onChangMode}>다크모드 전환</a>
       </LinkWrapper>
       <LinkWrapper>
-        {0 ? (
+        {me ? (
           <>
             <LoginUser>
-              <span>고윤혁</span>님 환영합니다.
+              <span>{me.user?.MyInfo.nickname}</span>님 환영합니다.
             </LoginUser>
             <ColumnLine />
             <Link href="/login">마이페이지</Link>

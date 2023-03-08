@@ -20,7 +20,7 @@ import axios from 'axios';
 import wrapper from '../store/configureStore';
 // redux
 import { useDispatch, useSelector } from 'react-redux';
-import { LOGIN_REQUEST, LOAD_MY_INFO_REQUEST } from '../reducers/user';
+import { LOAD_MY_INFO_REQUEST } from '../reducers/user';
 
 /***********************************************
  * 각 페이지에 있는 검색창 위로 올리고 무한스크롤 기능 추가하기
@@ -28,6 +28,7 @@ import { LOGIN_REQUEST, LOAD_MY_INFO_REQUEST } from '../reducers/user';
 
 // 메인 페이지
 const Home = () => {
+  const dispatch = useDispatch();
   const { me } = useSelector((state) => state.user); // me && me.user.user_id
 
   return (

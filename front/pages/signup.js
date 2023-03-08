@@ -46,10 +46,10 @@ const Signup = () => {
   const { signupLoading, signupDone, signupError, me } = useSelector((state) => state.user);
 
   useEffect(() => {
-    if (me && me.user.user_id) {
+    if (me) {
       Router.replace('/'); // 페이지가 없어짐
     }
-  }, [me && me.user.user_id]);
+  }, [me]);
 
   useEffect(() => {
     if (signupDone) {
@@ -120,7 +120,7 @@ const Signup = () => {
           },
         });
       } else {
-        return alert('회원가입을 위해서 이용약관의 동의가 필요합니다.');
+        alert('회원가입을 위해서 이용약관의 동의가 필요합니다.');
       }
     },
     [email, password, passwordConfirm, name, nickname, phoneNum, adress]
