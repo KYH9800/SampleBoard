@@ -33,7 +33,7 @@ import { useSelector } from 'react-redux';
 
 const AppLayout = ({ children }) => {
   const { me } = useSelector((state) => state.user); // me && me.user.user_id
-  console.log('me in AppLayout: ', me);
+  // console.log('me in AppLayout: ', me);
 
   const onClickAlert = () => {
     alert('해당 기능을 준비중입니다.');
@@ -55,11 +55,17 @@ const AppLayout = ({ children }) => {
       <Main>
         <Aside>
           <LoginSection>
-            {me ? <UserBox /> : <LoginBox />}
-            <Section>
-              <CustomLink href="/signup">회원가입</CustomLink>
-              <CustomLink href="/findInfo">아이디•비밀번호 찾기</CustomLink>
-            </Section>
+            {me ? (
+              <UserBox />
+            ) : (
+              <>
+                <LoginBox />
+                <Section>
+                  <CustomLink href="/signup">회원가입</CustomLink>
+                  <CustomLink href="/findInfo">아이디•비밀번호 찾기</CustomLink>
+                </Section>
+              </>
+            )}
           </LoginSection>
 
           <ChatBox />

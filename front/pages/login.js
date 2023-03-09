@@ -1,25 +1,44 @@
-import React from 'react';
+import React, { useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
+import Router from 'next/router';
 // AppLayout
 import AppLayoutWithoutSide from '../components/AppLayout/AppLayoutWithoutSide';
 // styled-components
 import { Button } from '../styles/components/LoginBox/LoginBoxSt';
 import { Article, TilteWord, Form, Input, KakaoLoginWrapper, BottomButton } from '../styles/pages/LoginSt';
+// custom hooks
+import useInput from '../customHooks/useInput';
 // redux, server side rendering
 import { END } from 'redux-saga';
 import axios from 'axios';
 import wrapper from '../store/configureStore';
 // redux
 import { useDispatch, useSelector } from 'react-redux';
-import { SIGNUP_REQUEST, LOGIN_REQUEST, LOAD_MY_INFO_REQUEST } from '../reducers/user';
+import { loginRequestAction, LOAD_MY_INFO_REQUEST } from '../reducers/user';
 
 // 회원가입
 const Login = () => {
-  const onClickSubmit = (e) => {
-    e.preventDefault();
-    console.log('onSubmit Search');
-  };
+  const dispatch = useDispatch();
+  const [email, onChangeEmail, setEmail] = useInput(''); // setText('') 요청이가면 비운다.
+  const [password, onChangePassword, setPassword] = useInput('');
+
+  const { me } = useSelector((state) => state.user);
+
+  useEffect(() => {
+    if (me) {
+      Router.replace('/'); // 페이지가 없어짐
+    }
+  }, [me]);
+
+  const onClickSubmit = useCallback(
+    (e) => {
+      e.preventDefault();
+
+      dispatch(loginRequestAction({ email, password }));
+    },
+    [email, password]
+  );
 
   const KakaoLoginClick = () => {
     console.log('test');
@@ -36,8 +55,8 @@ const Login = () => {
         <TilteWord>로그인</TilteWord>
 
         <Form onSubmit={onClickSubmit}>
-          <Input type="email" placeholder="아이디 또는 이메일" />
-          <Input type="password" placeholder="비밀번호" />
+          <Input type="email" placeholder="이메일" value={email} onChange={onChangeEmail} />
+          <Input type="password" placeholder="비밀번호" value={password} onChange={onChangePassword} />
           <Button>로그인</Button>
           <KakaoLoginWrapper onClick={KakaoLoginClick}>
             <img src="/images/kakao_logo.svg" />

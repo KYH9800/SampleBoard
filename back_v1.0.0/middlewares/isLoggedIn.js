@@ -76,10 +76,10 @@ const isLoggedIn = async (req, res, next) => {
     const isRefreshTokenValidate = validateRefreshToken(refreshToken);
     // console.log('isRefreshTokenValidate: ', isRefreshTokenValidate);
 
-    //! refresh token이 없으면 쿠키 다 지우고 로그인 화면으로 리다이렉트 하기
+    //* refresh token이 없으면 쿠키 다 지우고 로그인 화면으로 리다이렉트 하기
     console.log('refreshToken 검증: ', isRefreshTokenValidate);
     if (!isRefreshTokenValidate) {
-      console.log('여기까지는 오냐? -> 온다'); //? 쿠키가 왜 안지워질까?
+      console.log('여기까지는 오냐? -> 온다'); //* 쿠키가 왜 안지워질까?
 
       res.clearCookie('refreshToken');
       res.clearCookie('accessToken');
@@ -88,8 +88,6 @@ const isLoggedIn = async (req, res, next) => {
     }
 
     if (!isAccessTokenValidate) {
-      // const user = getRefreshTokenPayload(refreshToken);
-      // console.log('user: ', user);
       const refreshTokenId = getRefreshTokenPayload(refreshToken);
       // console.log('refreshTokenId: ', refreshTokenId);
       if (!refreshTokenId) {

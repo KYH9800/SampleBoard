@@ -12,6 +12,7 @@
   "author": "KoYunHyeok",
   "license": "ISC",
   "dependencies": {
+    "@ant-design/icons": "^5.0.1",
     "@next/bundle-analyzer": "^13.2.3",
     "@redux-saga/core": "^1.2.2",
     "axios": "^1.3.4",

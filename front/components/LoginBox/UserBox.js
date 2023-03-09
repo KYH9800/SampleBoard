@@ -1,31 +1,66 @@
 import React, { useEffect } from 'react';
 // styled-components
 import { UserBoxWrapper } from '../../styles/components/LoginBox/UserBoxSt';
+// styled-components
+import {
+  UserProfileLine,
+  UserImage,
+  UserNickname,
+  UserAuthority,
+  UserPostsInfoLine,
+  PostCount,
+  ButtonLine,
+  ButtonTopLine,
+  Button,
+  LinkButton,
+} from '../../styles/components/LoginBox/UserBoxSt';
+// antd
+import { LoadingOutlined } from '@ant-design/icons';
 // redux
 import { useSelector, useDispatch } from 'react-redux';
+import { logoutRequestAction } from '../../reducers/user';
 
 const UserBox = () => {
   const dispatch = useDispatch();
   const { me } = useSelector((state) => state.user); // me && me.user.user_id
-  console.log('me: ', me);
+  // console.log('me: ', me);
 
-  console.log('me.user?.Post: ', me.user?.Post);
+  const onClickLogout = (e) => {
+    e.preventDefault();
+
+    if (confirm('로그아웃을 진행하시겠습니까?')) {
+      dispatch(logoutRequestAction());
+    }
+  };
 
   return (
     <UserBoxWrapper>
-      <h3>
-        <span>{me.user?.MyInfo.nickname}</span> 님
-      </h3>
-      <h3>
+      <UserProfileLine>
+        <UserImage src="/images/1672023331502-3o43kwpfrii.jpg" />
+        <div>
+          <UserNickname>{me.user ? me.user.MyInfo.nickname : <LoadingOutlined />}님</UserNickname>
+          <UserAuthority>{me.user?.authority}</UserAuthority>
+        </div>
+      </UserProfileLine>
+      <UserPostsInfoLine>
         <span>게시물</span>
-        <span> {!me.user?.Post ? 0 : me.user?.Post.length}</span>개
-      </h3>
-      <div>
-        <button>정보수정</button>
-      </div>
-      <div>
-        <button>로그아웃</button>
-      </div>
+        <PostCount className="post-count">
+          {me.user ? !me.user?.Post ? 0 : me.user?.Post.length : <LoadingOutlined />}개
+        </PostCount>
+      </UserPostsInfoLine>
+      <UserPostsInfoLine>
+        <span>스크랩</span>
+        <PostCount className="post-count">
+          {me.user ? !me.user?.Post ? 0 : me.user?.Post.length : <LoadingOutlined />}개
+        </PostCount>
+      </UserPostsInfoLine>
+      <ButtonLine>
+        <ButtonTopLine>
+          <LinkButton href="/myPage">정보수정</LinkButton>
+          <LinkButton href="/myScrap">스크랩 리스트</LinkButton>
+        </ButtonTopLine>
+        <Button onClick={onClickLogout}>로그아웃</Button>
+      </ButtonLine>
     </UserBoxWrapper>
   );
 };
