@@ -29,7 +29,7 @@ const SubNavbar = () => {
               <span>{me.user?.MyInfo.nickname}</span>님 환영합니다.
             </LoginUser>
             <ColumnLine />
-            <Link href="/login">마이페이지</Link>
+            <Link href="/myPage">마이페이지</Link>
           </>
         ) : (
           <>
