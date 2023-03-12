@@ -57,7 +57,7 @@ const UserBox = () => {
       <ButtonLine>
         <ButtonTopLine>
           <LinkButton href="/myPage">정보수정</LinkButton>
-          <LinkButton href="/myScrap">스크랩 리스트</LinkButton>
+          <LinkButton href="/myActivity">나의활동</LinkButton>
         </ButtonTopLine>
         <Button onClick={onClickLogout}>로그아웃</Button>
       </ButtonLine>

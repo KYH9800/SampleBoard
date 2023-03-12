@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Head from 'next/head';
+import Router from 'next/router';
 // AppLayout
 import AppLayout from '../components/AppLayout/AppLayout';
 // styled-components
@@ -11,6 +12,8 @@ import {
   Section,
   SearchInput,
   SearchButton,
+  TopLine,
+  AddPostButton,
 } from '../styles/pages/FreeSt';
 // components
 import BoardEntry from '../components/Pages/BoardEntry';
@@ -27,6 +30,14 @@ import { free_board_fake_data } from '../MockDatas/MockData';
 
 // 최근 게시글
 const Best = () => {
+  const { me, loginDone } = useSelector((state) => state.user);
+
+  useEffect(() => {
+    if (loginDone) {
+      Router.push('/best');
+    }
+  }, [loginDone]);
+
   const onSearchSubmit = (e) => {
     e.preventDefault();
     console.log('onSubmit Search');
@@ -40,21 +51,24 @@ const Best = () => {
       </Head>
 
       <section id="searchAndWrite">
-        <SearchForm onSubmit={onSearchSubmit}>
-          <div>
-            <Section>
-              <option>제목</option>
-              <option>제목 + 내용</option>
-              <option>닉네임</option>
-            </Section>
-          </div>
-          <div>
-            <SearchInput type="text" placeholder="검색어" />
-          </div>
-          <div>
-            <SearchButton>검색</SearchButton>
-          </div>
-        </SearchForm>
+        <TopLine>
+          <div>{me ? <AddPostButton href="addPost">글쓰기</AddPostButton> : null}</div>
+          <SearchForm onSubmit={onSearchSubmit}>
+            <div>
+              <Section>
+                <option>제목</option>
+                <option>제목 + 내용</option>
+                <option>닉네임</option>
+              </Section>
+            </div>
+            <div>
+              <SearchInput type="text" placeholder="검색어" />
+            </div>
+            <div>
+              <SearchButton>검색</SearchButton>
+            </div>
+          </SearchForm>
+        </TopLine>
       </section>
 
       <TitleContainer id="titleContainer">

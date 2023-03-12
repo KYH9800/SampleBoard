@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Head from 'next/head';
 // AppLayout
 import AppLayout from '../components/AppLayout/AppLayout';
@@ -12,6 +12,14 @@ import { SIGNUP_REQUEST, LOGIN_REQUEST, LOAD_MY_INFO_REQUEST } from '../reducers
 
 // 최근 게시글
 const Search = () => {
+  const { loginDone } = useSelector((state) => state.user);
+
+  useEffect(() => {
+    if (loginDone) {
+      Router.push('/humor');
+    }
+  }, [loginDone]);
+
   return (
     <AppLayout>
       <Head>

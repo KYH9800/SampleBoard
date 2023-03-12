@@ -8,6 +8,9 @@ import {
   LOGOUT_REQUEST,
   LOGOUT_SUCCESS,
   LOGOUT_FAILURE,
+  UPDATE_MY_INFO_REQUEST,
+  UPDATE_MY_INFO_SUCCESS,
+  UPDATE_MY_INFO_FAILURE,
   SIGNUP_REQUEST,
   SIGNUP_SUCCESS,
   SIGNUP_FAILURE,
@@ -55,6 +58,28 @@ function* logout() {
     console.log(err);
     yield put({
       type: LOGOUT_FAILURE,
+      error: err.response.data,
+    });
+  }
+}
+
+// 내 정보 수정
+function updateMyInfoAPI(data) {
+  return axios.patch('/user', data);
+}
+
+function* updateMyInfo(action) {
+  try {
+    const result = yield call(updateMyInfoAPI, action.data);
+
+    yield put({
+      type: UPDATE_MY_INFO_SUCCESS,
+      data: result.data,
+    });
+  } catch (err) {
+    console.log(err);
+    yield put({
+      type: UPDATE_MY_INFO_FAILURE,
       error: err.response.data,
     });
   }
@@ -112,6 +137,10 @@ function* watchLogout() {
   yield takeLatest(LOGOUT_REQUEST, logout);
 }
 
+function* watchUpdateMyInfo() {
+  yield takeLatest(UPDATE_MY_INFO_REQUEST, updateMyInfo);
+}
+
 function* watchSignup() {
   yield takeLatest(SIGNUP_REQUEST, signup);
 }
@@ -121,5 +150,5 @@ function* watchLoadMyInfo() {
 }
 
 export default function* userSaga() {
-  yield all([fork(watchLogin), fork(watchLogout), fork(watchSignup), fork(watchLoadMyInfo)]);
+  yield all([fork(watchLogin), fork(watchLogout), fork(watchUpdateMyInfo), fork(watchSignup), fork(watchLoadMyInfo)]);
 }

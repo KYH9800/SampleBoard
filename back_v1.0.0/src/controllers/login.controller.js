@@ -6,7 +6,6 @@ class LoginController {
       const { email, password } = req.body;
 
       const token = await user_login(email, password);
-      console.log('token: ', token);
 
       if (process.env.NODE_ENV === 'production') {
         res.cookie('accessToken', token.accessToken, { sameSite: 'None', secure: true, httpOnly: true });

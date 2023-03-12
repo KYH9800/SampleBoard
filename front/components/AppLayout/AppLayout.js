@@ -33,7 +33,6 @@ import { useSelector } from 'react-redux';
 
 const AppLayout = ({ children }) => {
   const { me } = useSelector((state) => state.user); // me && me.user.user_id
-  // console.log('me in AppLayout: ', me);
 
   const onClickAlert = () => {
     alert('해당 기능을 준비중입니다.');
