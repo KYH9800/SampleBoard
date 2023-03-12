@@ -1,41 +1,46 @@
 import React, { useEffect } from 'react';
 import Head from 'next/head';
+import Router from 'next/router';
+import dynamic from 'next/dynamic';
+
 // AppLayout
-import AppLayoutWithoutSide from '../components/AppLayout/AppLayoutWithoutSide';
-// styled-components
-import { Button } from '../styles/components/LoginBox/LoginBoxSt';
-import { Article, TilteWord, Form, Input } from '../styles/pages/LoginSt';
+import AppLayout from '../components/AppLayout/AppLayout';
+
 // redux, server side rendering
 import { END } from 'redux-saga';
 import axios from 'axios';
 import wrapper from '../store/configureStore';
+
 // redux
 import { useDispatch, useSelector } from 'react-redux';
-import { SIGNUP_REQUEST, LOGIN_REQUEST, LOAD_MY_INFO_REQUEST } from '../reducers/user';
+import { LOAD_MY_INFO_REQUEST } from '../reducers/user';
 
-// 비밀번호 찾기
-const FindInfo = () => {
-  const onClickSubmit = (e) => {
-    e.preventDefault();
-    console.log('onSubmit Search');
-  };
+// Toast 에디터
+const CKEditor = dynamic(() => import('../components/Editor/Editor'), {
+  ssr: false,
+});
+
+// 글쓰기
+const addPost = () => {
+  const { me } = useSelector((state) => state.user);
+
+  useEffect(() => {
+    if (!me) {
+      Router.replace('/'); // 페이지가 없어짐
+    }
+  }, [me]);
 
   return (
-    <AppLayoutWithoutSide>
+    <AppLayout>
       <Head>
         <meta charSet="utf-8" />
-        <title>비밀번호 찾기 - 게시판 샘플</title>
+        <title>인기 게시글 - 게시판 샘플</title>
       </Head>
 
-      <Article>
-        <TilteWord>비밀번호 찾기</TilteWord>
-
-        <Form onSubmit={onClickSubmit}>
-          <Input type="email" placeholder="이메일" />
-          <Button>비밀번호 찾기</Button>
-        </Form>
-      </Article>
-    </AppLayoutWithoutSide>
+      <div>
+        <CKEditor />
+      </div>
+    </AppLayout>
   );
 };
 
@@ -56,4 +61,4 @@ export const getServerSideProps = wrapper.getServerSideProps((store) => async ({
   await store.sagaTask.toPromise(); // store/configureStore.js > store.sagaTask
 });
 
-export default FindInfo;
+export default addPost;

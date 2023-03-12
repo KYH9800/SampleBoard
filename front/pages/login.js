@@ -23,7 +23,13 @@ const Login = () => {
   const [email, onChangeEmail, setEmail] = useInput(''); // setText('') 요청이가면 비운다.
   const [password, onChangePassword, setPassword] = useInput('');
 
-  const { me } = useSelector((state) => state.user);
+  const { me, loginDone } = useSelector((state) => state.user);
+
+  useEffect(() => {
+    if (loginDone) {
+      Router.push('/');
+    }
+  }, [loginDone]);
 
   useEffect(() => {
     if (me) {

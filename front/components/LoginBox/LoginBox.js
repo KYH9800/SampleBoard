@@ -11,8 +11,8 @@ import { loginRequestAction } from '../../reducers/user';
 
 const LoginBox = () => {
   const dispatch = useDispatch();
-  const { logInLoading, logInError } = useSelector((state) => state.user);
 
+  const { logInLoading, loginDone, logInError } = useSelector((state) => state.user);
   const [email, onChangeEmail, setEmail] = useInput(''); // setText('') 요청이가면 비운다.
   const [password, onChangePassword, setPassword] = useInput('');
 

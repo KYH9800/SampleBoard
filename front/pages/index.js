@@ -29,7 +29,13 @@ import { LOAD_MY_INFO_REQUEST } from '../reducers/user';
 // 메인 페이지
 const Home = () => {
   const dispatch = useDispatch();
-  const { me } = useSelector((state) => state.user); // me && me.user.user_id
+  const { me, loginDone } = useSelector((state) => state.user); // me && me.user.user_id
+
+  useEffect(() => {
+    if (loginDone) {
+      Router.push('/');
+    }
+  }, [loginDone]);
 
   return (
     <AppLayout>
@@ -61,15 +67,21 @@ const Home = () => {
 // 내 정보 불러오기, Server Side Rendering
 export const getServerSideProps = wrapper.getServerSideProps((store) => async ({ req }) => {
   console.log('getServerSideProps start');
-  console.log(req.headers);
+  console.log('req.headers.cookie: ', req.headers.cookie);
+  // const accessToken = req.headers.cookie.split(' ')[0].split('=')[1].split(';')[0];
+  // const refreshToken = req.headers.cookie.split(' ')[1].split('=')[1];
+
   const cookie = req ? req.headers.cookie : ''; // req가 있다면 cookie에 요청에 담겨진 cookie를 할당한다.
   axios.defaults.headers.Cookie = ''; // 요청이 들어올 때마다 초기화 시켜주는 것이다. 여기는 클라이언트 서버에서 실행되므로 이전 요청이 남아있을 수 있기 때문이다
+
   if (req && cookie) {
     axios.defaults.headers.Cookie = cookie; // 서버일때랑 cookie를 써서 요청을 보낼 때만 headers에 cookie를 넣어준다
   }
+
   store.dispatch({
     type: LOAD_MY_INFO_REQUEST,
   });
+
   store.dispatch(END);
   console.log('getServerSideProps end');
   await store.sagaTask.toPromise(); // store/configureStore.js > store.sagaTask

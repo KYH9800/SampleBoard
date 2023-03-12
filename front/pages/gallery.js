@@ -1,9 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Head from 'next/head';
+import Router from 'next/router';
 // AppLayout
 import AppLayout from '../components/AppLayout/AppLayout';
 // styled-components
-import { TitleContainer, Title, SearchForm, Section, SearchInput, SearchButton } from '../styles/pages/FreeSt';
+import {
+  TitleContainer,
+  Title,
+  SearchForm,
+  Section,
+  SearchInput,
+  SearchButton,
+  TopLine,
+  AddPostButton,
+} from '../styles/pages/FreeSt';
 import { PostCardList } from '../styles/pages/PostCardEntry';
 // components
 import PostCardEntry from '../components/Pages/PostCardEntry';
@@ -20,6 +30,14 @@ import { SIGNUP_REQUEST, LOGIN_REQUEST, LOAD_MY_INFO_REQUEST } from '../reducers
 
 // 갤러리
 const Gallery = () => {
+  const { me, loginDone } = useSelector((state) => state.user);
+
+  useEffect(() => {
+    if (loginDone) {
+      Router.push('/gallery');
+    }
+  }, [loginDone]);
+
   const onSearchSubmit = (e) => {
     e.preventDefault();
     console.log('onSubmit Search');
@@ -33,21 +51,24 @@ const Gallery = () => {
       </Head>
 
       <section id="searchAndWrite">
-        <SearchForm onSubmit={onSearchSubmit}>
-          <div>
-            <Section>
-              <option>제목</option>
-              <option>제목 + 내용</option>
-              <option>닉네임</option>
-            </Section>
-          </div>
-          <div>
-            <SearchInput type="text" placeholder="검색어" />
-          </div>
-          <div>
-            <SearchButton>검색</SearchButton>
-          </div>
-        </SearchForm>
+        <TopLine>
+          <div>{me ? <AddPostButton href="addPost">글쓰기</AddPostButton> : null}</div>
+          <SearchForm onSubmit={onSearchSubmit}>
+            <div>
+              <Section>
+                <option>제목</option>
+                <option>제목 + 내용</option>
+                <option>닉네임</option>
+              </Section>
+            </div>
+            <div>
+              <SearchInput type="text" placeholder="검색어" />
+            </div>
+            <div>
+              <SearchButton>검색</SearchButton>
+            </div>
+          </SearchForm>
+        </TopLine>
       </section>
 
       <TitleContainer id="titleContainer">

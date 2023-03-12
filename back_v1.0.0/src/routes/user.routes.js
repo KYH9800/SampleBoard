@@ -16,6 +16,9 @@ const { isLoggedIn, isLoggedInForLogout } = require('../../middlewares/isLoggedI
 // 내 정보 불러오기
 router.get('/', isLoggedIn, userController.findUser);
 
+// 내 정보 수정, 비밀번호 변경
+router.patch('/', isLoggedIn, userController.updateUserInfo);
+
 // 회원가입
 router.post('/signup', isNotLoggedIn, signupController.signup);
 

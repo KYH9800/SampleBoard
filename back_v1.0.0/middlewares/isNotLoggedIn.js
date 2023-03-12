@@ -2,7 +2,7 @@
 const isNotLoggedIn = (req, res, next) => {
   try {
     const accessToken = req.cookies.accessToken; // res.clearCookie('refresh_token');
-    console.log('acessToken: ', accessToken);
+    console.log('acessToken in isNotLoggedIn: ', accessToken);
 
     if (accessToken) {
       return res.status(403).send({

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Link from 'next/link';
 
 export const TitleContainer = styled.section`
   width: 100%;
@@ -29,6 +30,38 @@ export const BoarderList = styled.section`
   box-sizing: border-box;
 `;
 
+// 글쓰기
+export const TopLine = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+// 글쓰기 버튼
+export const AddPostButton = styled(Link)`
+  cursor: pointer;
+  display: block;
+
+  height: 40px;
+  box-sizing: border-box;
+  color: #fff;
+  background-color: #697183;
+
+  border: 0;
+  border-radius: 8px;
+
+  margin: 0;
+  padding: 0 20px;
+  font-size: 1em;
+
+  text-decoration: none;
+  line-height: 42px;
+
+  :hover {
+    background-color: #535864;
+  }
+`;
+
 // search form
 export const SearchForm = styled.form`
   display: flex;
@@ -38,6 +71,7 @@ export const SearchForm = styled.form`
 // section
 export const Section = styled.select`
   cursor: pointer;
+  outline: none;
 
   height: 40px;
   appearance: none;
@@ -50,7 +84,7 @@ export const Section = styled.select`
   font-size: 1em;
   color: #fff;
 
-  background-color: #cacfd8;
+  background-color: #697183;
   box-sizing: border-box;
 
   option {
@@ -59,6 +93,10 @@ export const Section = styled.select`
     white-space: nowrap;
     min-height: 1.2em;
     padding: 0px 2px 1px;
+  }
+
+  :hover {
+    background-color: #535864;
   }
 `;
 
@@ -78,7 +116,7 @@ export const SearchInput = styled.input`
   border: 0;
   border-radius: 8px;
 
-  margin: 0 14px;
+  margin: 0 7px;
   padding: 0 16px;
 `;
 
@@ -88,10 +126,14 @@ export const SearchButton = styled.button`
   height: 40px;
   box-sizing: border-box;
   color: #fff;
-  background-color: #cacfd8;
+  background-color: #697183;
   border: 0;
   margin: 0;
   padding: 0 20px;
   font-size: 1em;
   border-radius: 8px;
+
+  :hover {
+    background-color: #535864;
+  }
 `;

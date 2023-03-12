@@ -14,7 +14,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { LOAD_MY_INFO_REQUEST } from '../reducers/user';
 
 // 마이페이지
-const MyScrap = () => {
+const MyActivity = () => {
   const dispatch = useDispatch();
   const { me } = useSelector((state) => state.user);
 
@@ -28,10 +28,16 @@ const MyScrap = () => {
     <AppLayout>
       <Head>
         <meta charSet="utf-8" />
-        <title>마이스크랩 - 게시판 샘플</title>
+        <title>나의활동 - 게시판 샘플</title>
       </Head>
 
-      <div>{me?.user.MyInfo.name}님의 스크랩 페이지</div>
+      <h3>나의 활동</h3>
+      <h3>나의 게시글</h3>
+      <div>{me?.user.MyInfo.name}님의 게시글</div>
+      <h3>나의 댓글</h3>
+      <div>{me?.user.MyInfo.name}님의 댓글</div>
+      <h3>나의 스크랩</h3>
+      <div>{me?.user.MyInfo.name}님의 스크랩</div>
     </AppLayout>
   );
 };
@@ -53,4 +59,4 @@ export const getServerSideProps = wrapper.getServerSideProps((store) => async ({
   await store.sagaTask.toPromise(); // store/configureStore.js > store.sagaTask
 });
 
-export default MyScrap;
+export default MyActivity;

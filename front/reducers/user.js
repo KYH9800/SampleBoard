@@ -1,9 +1,6 @@
 import produce from 'immer';
 // 초기 state
 export const initialState = {
-  changeNicknameLoading: false,
-  changeNicknameDone: false,
-  changeNicknameError: null,
   loginLoading: false,
   loginDone: false,
   loginError: null,
@@ -16,6 +13,9 @@ export const initialState = {
   signupLoading: false,
   signupDone: false,
   signupError: null,
+  updateMyInfoLoading: false,
+  updateMyInfoDone: false,
+  updateMyInfoError: null,
   me: null,
 };
 
@@ -31,6 +31,10 @@ export const LOAD_MY_INFO_FAILURE = 'LOAD_MY_INFO_FAILURE';
 export const LOGOUT_REQUEST = 'LOGOUT_REQUEST';
 export const LOGOUT_SUCCESS = 'LOGOUT_SUCCESS';
 export const LOGOUT_FAILURE = 'LOGOUT_FAILURE';
+
+export const UPDATE_MY_INFO_REQUEST = 'UPDATE_MY_INFO_REQUEST';
+export const UPDATE_MY_INFO_SUCCESS = 'UPDATE_MY_INFO_SUCCESS';
+export const UPDATE_MY_INFO_FAILURE = 'UPDATE_MY_INFO_FAILURE';
 
 export const SIGNUP_REQUEST = 'SIGNUP_REQUEST';
 export const SIGNUP_SUCCESS = 'SIGNUP_SUCCESS';
@@ -102,6 +106,21 @@ const reducer = (state = initialState, action) =>
         draft.logoutLoading = false;
         draft.logoutError = action.error?.errorMessage;
         draft.me = null;
+        break;
+
+      // 내 정보 수정
+      case UPDATE_MY_INFO_REQUEST:
+        draft.updateMyInfoLoading = true;
+        draft.updateMyInfoDone = false;
+        draft.updateMyInfoError = null;
+        break;
+      case UPDATE_MY_INFO_SUCCESS:
+        draft.updateMyInfoLoading = false;
+        draft.updateMyInfoDone = true;
+        break;
+      case UPDATE_MY_INFO_FAILURE:
+        draft.updateMyInfoLoading = false;
+        draft.updateMyInfoError = action.error?.errorMessage;
         break;
 
       // 회원가입
