@@ -1,23 +1,28 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import Link from 'next/link';
 import Router from 'next/router';
+
 // styled-components
 import { HomeWrapper, BoxWrapper, BottomBannerImg } from '../styles/pages/HomeSt';
-import { BannerImg } from '../styles/components/Banners/BannerIndexTopSt';
+
 // AppLayout
 import AppLayout from '../components/AppLayout/AppLayout';
+
 // components
 import BannerIndexTop from '../components/Banner/BannerIndexTop';
 import FreeBoardBox from '../components/HomeBoardBox/FreeBoardBox';
 import GalleryBoardBox from '../components/HomeBoardBox/GalleryBoardBox';
 import YoutubeBoardBox from '../components/HomeBoardBox/YoutubeBoardBox';
 import NoticeBoardBox from '../components/HomeBoardBox/NoticeBoardBox';
+
 // custom hooks
 import useInput from '../customHooks/useInput';
+
 // redux, server side rendering
 import { END } from 'redux-saga';
 import axios from 'axios';
 import wrapper from '../store/configureStore';
+
 // redux
 import { useDispatch, useSelector } from 'react-redux';
 import { LOAD_MY_INFO_REQUEST } from '../reducers/user';

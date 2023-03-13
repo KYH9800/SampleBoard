@@ -120,6 +120,10 @@ export const EditorWrapper = styled.div`
     margin: 5px 0;
   }
 
+  .ck.ck-sticky-panel__content {
+    position: static !important;
+  }
+
   .ck-editor__editable_inline {
     /* height: 50vh; */
     /* height: 60vh; */

@@ -11,6 +11,8 @@ export const ChatContainer = styled.div`
 `;
 
 export const ChatBanner = styled.div`
+  position: relative;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -43,7 +45,7 @@ export const UserCount = styled.div`
 
 export const ChatBoxWrapper = styled.div`
   position: relative;
-  padding: 0 10px;
+
   height: 260px;
 `;
 
