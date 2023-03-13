@@ -1,6 +1,7 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
+
 // components
 import SubNavbar from '../Navbar/SubNavbar';
 import MainNavbar from '../Navbar/MainNavbar';
@@ -10,6 +11,9 @@ import UserBox from '../LoginBox/UserBox';
 import ChatBox from '../ChatBox/ChatBox';
 import BannerSideTop from '../Banner/BannerSideTop';
 import Footer from './Footer';
+
+import NewPostSideBox from '../AppLayout/NewPostSideBox';
+import BestPostSideBox from '../AppLayout/BestPostSideBox';
 // styled-components
 import {
   LayoutWrapper,
@@ -23,7 +27,11 @@ import {
   Section,
   CustomLink,
   ButtonList,
+  ChaboxLine,
+  CloseBox,
+  Img,
 } from '../../styles/components/AppLayout/AppLayoutSt';
+
 // redux
 import { useSelector } from 'react-redux';
 
@@ -32,10 +40,20 @@ import { useSelector } from 'react-redux';
  ********************************/
 
 const AppLayout = ({ children }) => {
-  const { me } = useSelector((state) => state.user); // me && me.user.user_id
+  const [messageToAdmin, setMessageToAdmin] = useState(false);
+  const { me, loginDone, logoutDone } = useSelector((state) => state.user); // me && me.user.user_id
 
-  const onClickAlert = () => {
-    alert('해당 기능을 준비중입니다.');
+  useEffect(() => {
+    if (loginDone) {
+      setMessageToAdmin(false);
+    }
+    if (logoutDone) {
+      setMessageToAdmin(false);
+    }
+  }, [loginDone, logoutDone]);
+
+  const onClickMessageToAdmin = () => {
+    setMessageToAdmin((prevState) => !prevState);
   };
 
   return (
@@ -67,17 +85,27 @@ const AppLayout = ({ children }) => {
             )}
           </LoginSection>
 
-          <ChatBox />
+          <NewPostSideBox />
+          <BestPostSideBox />
           <BannerSideTop />
         </Aside>
 
         <Pages>
           {children}
           <ButtonList>
-            <img src="/images/naver_quick.png" onClick={onClickAlert} />
-            <img src="/images/kakao_quick.png" onClick={onClickAlert} />
+            {/* <img src="/images/kakao_quick.png" onClick={onClickAlert} /> */}
+            {me ? (
+              messageToAdmin ? (
+                <ChaboxLine>
+                  <CloseBox onClick={onClickMessageToAdmin}>닫기</CloseBox>
+                  <ChatBox />
+                </ChaboxLine>
+              ) : (
+                <Img src="/images/naver_quick.png" onClick={onClickMessageToAdmin} />
+              )
+            ) : null}
             <Link href="#">
-              <img src="/images/top_btn.png" />
+              <Img src="/images/top_btn.png" />
             </Link>
           </ButtonList>
         </Pages>

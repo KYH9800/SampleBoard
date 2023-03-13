@@ -1,8 +1,29 @@
 class PostController {
+  uploadImage = async (req, res) => {
+    try {
+      const src = req.files;
+      console.log('src: ', src);
+
+      return res.json(src.map((v) => v.location));
+    } catch (error) {
+      console.log('error: ', error);
+    }
+  };
+
   addPost = (req, res) => {
-    // TODO
+    const { title, category, content, image } = req.body;
+
+    console.log('title: ', title);
+    console.log('category: ', category);
+    console.log('content: ', content);
+    console.log('image: ', image);
+
     return res.status(200).send({
       message: 'post seccess',
+      title: title,
+      category: category,
+      content: content,
+      image: image,
     });
   };
 

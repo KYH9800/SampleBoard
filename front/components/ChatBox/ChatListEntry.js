@@ -3,7 +3,9 @@ import React from 'react';
 import {
   UserMessageLine,
   UserNickname,
+  AdminName,
   ChatNoticeLogoImg,
+  MessageDate,
   MyMessage,
 } from '../../styles/components/ChatBox/ChatListEntrySt';
 
@@ -14,17 +16,18 @@ const ChatListEntry = ({ data }) => {
         // 다른 사용자가 작성한 메세지
         <UserMessageLine>
           <UserNickname>
-            <ChatNoticeLogoImg src="/images/10.svg" />
-            {data.user}
+            {/* <ChatNoticeLogoImg src="/images/10.svg" /> */}
+            <AdminName>{data.user}님</AdminName>
+            <MessageDate>2023.03.13 08:58:00</MessageDate>
           </UserNickname>
-          <span>
+          <div>
             {data.message.split('\n').map((text, idx) => (
               <div key={idx}>
                 {text}
                 <br />
               </div>
             ))}
-          </span>
+          </div>
         </UserMessageLine>
       ) : (
         // 내가 작성한 메세지

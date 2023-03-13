@@ -1,64 +1,12 @@
 //* 채팅 페이크 데이터
 export const fakeData = [
   {
-    user: '고윤혁',
-    message: '관리자 안녕하세요.',
+    user: '관리자',
+    message: '관리자입니다.',
   },
   {
     user: '관리자',
-    message: '고윤혁 안녕하세요.',
-  },
-  {
-    user: '샘플보드',
-    message: '사냥꾼 안녕하세요.',
-  },
-  {
-    user: '강지영',
-    message: '아나운서 강지영입니다. 안녕하세요.\n게시판 샘플 한번 보고갑니다.',
-  },
-  {
-    user: '봄봄',
-    message: '봄봄입니다. 안녕하세요.',
-  },
-  {
-    user: '데브라이너',
-    message: '주식회사 데브라이너입니다. 안녕하세요.',
-  },
-  {
-    user: '데브라이너',
-    message: '주식회사 데브라이너입니다. 안녕하세요.',
-  },
-  {
-    user: '데브라이너',
-    message: '주식회사 데브라이너입니다. 안녕하세요.',
-  },
-  {
-    user: '데브라이너',
-    message: '주식회사 데브라이너입니다. 안녕하세요.',
-  },
-  {
-    user: '데브라이너',
-    message: '주식회사 데브라이너입니다. 안녕하세요.',
-  },
-  {
-    user: '데브라이너',
-    message: '주식회사 데브라이너입니다. 안녕하세요.',
-  },
-  {
-    user: '데브라이너',
-    message: '주식회사 데브라이너입니다. 안녕하세요.',
-  },
-  {
-    user: '데브라이너',
-    message: '주식회사 데브라이너입니다. 안녕하세요.',
-  },
-  {
-    user: '데브라이너',
-    message: '주식회사 데브라이너입니다. 안녕하세요.',
-  },
-  {
-    user: '데브라이너',
-    message: '주식회사 데브라이너입니다. 안녕하세요.',
+    message: '안녕하세요.',
   },
 ];
 
@@ -91,6 +39,109 @@ export const notice_fake_data = {
   content: '공지사항 글을 보여줍니다.',
   category: 'notice',
 };
+
+//* 최근게시글 페이크 테이터
+export const new_board_fake_data = [
+  {
+    id: 'xcqWMXlUUx1',
+    title: '고윤혁 테스트 게시글 입니다.',
+    user_name: '고윤혁',
+    permission_name: '관리자',
+    datetime: '02-28',
+    src: 'https://pbs.twimg.com/media/C_j5ZDYUIAAf4Ov.jpg:large',
+    category: 'free',
+  },
+  {
+    id: 'xcqWMXlUUx1',
+    title: '테스트 제니 게시글 입니다.',
+    user_name: '제니',
+    permission_name: '회원',
+    datetime: '02-28',
+    src: 'https://pbs.twimg.com/media/C_j5ZDYUIAAf4Ov.jpg:large',
+    category: 'notice',
+  },
+  {
+    id: 'xcqWMXlUUx1',
+    title: '지수 테스트 게시글 입니다.',
+    user_name: '지수',
+    permission_name: '사용자',
+    datetime: '02-28',
+    src: 'https://pbs.twimg.com/media/C_j5ZDYUIAAf4Ov.jpg:large',
+    category: 'free',
+  },
+  {
+    id: 'xcqWMXlUUx1',
+    title: '테스트 우정잉 게시글 입니다.',
+    user_name: '우정잉',
+    permission_name: '사용자',
+    datetime: '02-28',
+    src: 'https://pbs.twimg.com/media/C_j5ZDYUIAAf4Ov.jpg:large',
+    category: 'youtube',
+  },
+  {
+    id: 'xcqWMXlUUx1',
+    title: '곽튜브 테스트 게시글 입니다.',
+    user_name: '곽튜브',
+    permission_name: '사용자',
+    datetime: '02-28',
+    src: 'https://pbs.twimg.com/media/C_j5ZDYUIAAf4Ov.jpg:large',
+    category: 'notice',
+  },
+  {
+    id: 'xcqWMXlUUx1',
+    title: '테스트 강지영 게시글 입니다.',
+    user_name: '강지영',
+    permission_name: '아나운서',
+    datetime: '02-28',
+    src: 'https://pbs.twimg.com/media/C_j5ZDYUIAAf4Ov.jpg:large',
+    category: 'gallery',
+  },
+  {
+    id: 'xcqWMXlUUx1',
+    title: '강지영 테스트 게시글 입니다.',
+    user_name: '강지영',
+    permission_name: '아나운서',
+    datetime: '02-28',
+    src: 'https://pbs.twimg.com/media/C_j5ZDYUIAAf4Ov.jpg:large',
+    category: 'free',
+  },
+  {
+    id: 'xcqWMXlUUx1',
+    title: '태연 테스트 게시글 입니다.',
+    user_name: '태연',
+    permission_name: '회원',
+    datetime: '02-28',
+    src: 'https://pbs.twimg.com/media/C_j5ZDYUIAAf4Ov.jpg:large',
+    category: 'notice',
+  },
+  {
+    id: 'xcqWMXlUUx1',
+    title: '유재석 테스트 게시글 입니다.',
+    user_name: '유재석',
+    permission_name: '회원',
+    datetime: '02-28',
+    src: 'https://pbs.twimg.com/media/C_j5ZDYUIAAf4Ov.jpg:large',
+    category: 'humor',
+  },
+  {
+    id: 'xcqWMXlUUx1',
+    title: '유재석 테스트 게시글 입니다.',
+    user_name: '유재석',
+    permission_name: '회원',
+    datetime: '02-28',
+    src: 'https://pbs.twimg.com/media/C_j5ZDYUIAAf4Ov.jpg:large',
+    category: 'notice',
+  },
+  {
+    id: 'xcqWMXlUUx1',
+    title: '유재석 테스트 게시글 입니다.',
+    user_name: '유재석',
+    permission_name: '회원',
+    datetime: '02-28',
+    src: 'https://pbs.twimg.com/media/C_j5ZDYUIAAf4Ov.jpg:large',
+    category: 'notice',
+  },
+];
 
 //* 자유게시판 페이크 테이터
 export const free_board_fake_data = [

@@ -10,7 +10,7 @@ export const LayoutWrapper = styled.div`
 
 export const Header = styled.header`
   position: sticky;
-  top: -130px;
+  top: -124px;
   z-index: 999;
 
   display: flex;
@@ -94,15 +94,34 @@ export const CustomLink = styled(Link)`
 // 페이지 버튼
 export const ButtonList = styled.div`
   position: fixed;
-  right: 1%;
-  bottom: 2%;
+  right: 3.2%;
+  bottom: 6%;
 
   display: flex;
   flex-direction: column;
+`;
 
-  img {
-    cursor: pointer;
-    width: 58px;
-    height: 58px;
-  }
+// 관리자 채팅 박스
+export const ChaboxLine = styled.div`
+  position: fixed;
+  right: 3.2%;
+  bottom: 122px;
+
+  width: 400px;
+`;
+
+export const CloseBox = styled.div`
+  cursor: pointer;
+  z-index: 998;
+
+  position: fixed;
+  padding: 16px 5px;
+  right: 4.2%;
+
+  font-size: 17px;
+  font-weight: bold;
+`;
+
+export const Img = styled.img`
+  cursor: pointer;
 `;

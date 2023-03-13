@@ -17,6 +17,7 @@ import { LOAD_MY_INFO_REQUEST } from '../reducers/user';
 const MyActivity = () => {
   const dispatch = useDispatch();
   const { me } = useSelector((state) => state.user);
+  console.log('me: ', me);
 
   useEffect(() => {
     if (!me) {
@@ -33,11 +34,11 @@ const MyActivity = () => {
 
       <h3>나의 활동</h3>
       <h3>나의 게시글</h3>
-      <div>{me?.user.MyInfo.name}님의 게시글</div>
+      <div>{me?.user.Posts.length}개의 게시글</div>
       <h3>나의 댓글</h3>
-      <div>{me?.user.MyInfo.name}님의 댓글</div>
+      <div>{me?.user.Posts.length}개의 댓글</div>
       <h3>나의 스크랩</h3>
-      <div>{me?.user.MyInfo.name}님의 스크랩</div>
+      <div>{me?.user.Posts.length}개의 스크랩</div>
     </AppLayout>
   );
 };
